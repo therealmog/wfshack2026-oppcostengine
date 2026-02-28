@@ -1,165 +1,72 @@
-HTML<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Opportunity Cost Engine</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        body { background-color: #121212; color: #e0e0e0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-        .card { background-color: #1e1e1e; border: 1px solid #333; }
-        .btn-primary { background-color: #007bff; border-color: #007bff; }
-        .verdict-box { border-left: 4px solid #007bff; background-color: #1a222b; padding: 15px; border-radius: 4px; }
+        :root { --bg: #0b0e11; --card: #151921; --blue: #007aff; --border: #2c333d; }
+        body { background: var(--bg); color: #f8f9fa; font-family: 'Inter', sans-serif; }
+        .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; }
+        .btn-primary { background: var(--blue); border: none; font-weight: 600; padding: 12px; }
+        .verdict-box { border-left: 4px solid var(--blue); background: rgba(0,122,255,0.05); padding: 20px; border-radius: 4px; }
     </style>
 </head>
 <body class="py-5">
     <div class="container">
-        <header class="pb-3 mb-4 border-bottom">
-            <h1 class="fs-4 fw-bold">The Opportunity Cost Engine</h1>
-            <p class="text-muted">Analyse the true weight of your financial decisions.</p>
+        <header class="pb-3 mb-5 border-bottom border-secondary">
+            <h1 class="fs-4 fw-bold text-primary">THE OPPORTUNITY COST ENGINE</h1>
         </header>
 
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card p-4 h-100">
-                    <h5 class="mb-3">Transaction Details</h5>
+        <div class="row g-5">
+            <div class="col-lg-4">
+                <div class="card p-4">
                     <form id="calcForm">
                         <div class="mb-3">
-                            <label class="form-label">Item or Service Name</label>
-                            <input type="text" class="form-control bg-dark text-light border-secondary" id="itemName" placeholder="e.g. iPhone 17 Pro" required>
+                            <label class="form-label">What are you buying?</label>
+                            <input type="text" class="form-control" id="productName" placeholder="e.g. My new iPhone" required>
                         </div>
+                        <div class="mb-3">
+                            <label class="form-label">Search Investment Ticker</label>
+                            <input class="form-control" list="companyList" id="companyInput" placeholder="Type to search..." required>
+                            <datalist id="companyList">
+                                {% for co in companies %}<option value="{{ co.name }}" data-ticker="{{ co.ticker }}">{% endfor %}
+                            </datalist>
+                        </div>
+                        <input type="hidden" id="ticker">
                         <div class="mb-3">
                             <label class="form-label">Price (£)</label>
-                            <input type="number" class="form-control bg-dark text-light border-secondary" id="price" required>
+                            <input type="number" step="0.01" class="form-control" id="price" required>
                         </div>
-                        <div class="form-check mb-3">
-                            <input class="form-check-input" type="checkbox" id="isSubscription">
-                            <label class="form-check-label" for="isSubscription">
-                                This is a monthly subscription
-                            </label>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Item Category</label>
-                            <select class="form-select bg-dark text-light border-secondary" id="category">
-                                <option value="tech">Technology (e.g. Phone, Laptop)</option>
-                                <option value="car">Vehicle</option>
-                                <option value="other">Other Goods</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Alternative Stock Ticker</label>
-                            <input type="text" class="form-control bg-dark text-light border-secondary" id="ticker" value="AAPL" required>
+                        <div class="form-check form-switch mb-4">
+                            <input class="form-check-input" type="checkbox" id="isSub">
+                            <label class="form-check-label">Monthly Subscription?</label>
                         </div>
                         <div class="mb-4">
-                            <label class="form-label">Investment Horizon: <span id="yearValue">5</span> Years</label>
-                            <input type="range" class="form-range" id="years" min="1" max="10" value="5" oninput="document.getElementById('yearValue').innerText = this.value">
+                            <label class="form-label d-flex justify-content-between">
+                                <span>Horizon</span> <span class="text-primary fw-bold" id="yrDisp">5 Years</span>
+                            </label>
+                            <input type="range" class="form-range" id="years" min="1" max="10" value="5">
                         </div>
-                        <button type="submit" class="btn btn-primary w-100 fw-bold">Analyse Cost</button>
+                        <button type="submit" class="btn btn-primary w-100">RUN ANALYTICS</button>
                     </form>
+                    <br>
+                    <p>This is not financial advice blud</p>
                 </div>
             </div>
-
-            <div class="col-md-8">
-                <div class="card p-4 mb-4">
-                    <canvas id="costChart" height="120"></canvas>
+            <div class="col-lg-8">
+                <div class="card p-4 mb-4"><canvas id="mainChart" height="150"></canvas></div>
+                <div class="row g-3 mb-4 text-center">
+                    <div class="col-6"><div class="card p-3"><small class="text-muted">"Free" item Milestone</small><div class="h4 mb-0 text-success" id="mileOut">--</div></div></div>
+                    <div class="col-6"><div class="card p-3"><small class="text-muted">Opportunity Cost</small><div class="h4 mb-0 text-primary" id="eqOut">£0.00</div></div></div>
                 </div>
-                
-                <div class="row text-center mb-4">
-                    <div class="col-6">
-                        <div class="card p-3">
-                            <h6 class="text-muted mb-1">Free Item Milestone</h6>
-                            <h3 class="text-success mb-0" id="milestoneOut">-</h3>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="card p-3">
-                            <h6 class="text-muted mb-1">Final Equity Value</h6>
-                            <h3 class="text-primary mb-0" id="equityOut">-</h3>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="verdict-box d-none" id="verdictBox">
-                    <h6 class="fw-bold mb-1">Financial Health Verdict</h6>
-                    <p class="mb-0 text-light" id="verdictText"></p>
-                </div>
+                <div id="vBox" class="verdict-box d-none"><h6 class="fw-bold mb-2">Verdict</h6><p id="vText" class="m-0 text-muted"></p></div>
             </div>
         </div>
     </div>
-
-    <script>
-        let costChart;
-
-        document.getElementById('calcForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const payload = {
-                item_name: document.getElementById('itemName').value,
-                price: document.getElementById('price').value,
-                is_subscription: document.getElementById('isSubscription').checked,
-                category: document.getElementById('category').value,
-                ticker: document.getElementById('ticker').value,
-                years: document.getElementById('years').value
-            };
-
-            const response = await fetch('/calculate', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            });
-            
-            const data = await response.json();
-            
-            // Update UI metrics
-            document.getElementById('milestoneOut').innerText = data.milestone;
-            document.getElementById('equityOut').innerText = '£' + data.final_equity.toLocaleString();
-            
-            const verdictBox = document.getElementById('verdictBox');
-            verdictBox.classList.remove('d-none');
-            document.getElementById('verdictText').innerText = data.verdict;
-
-            // Render Chart
-            const ctx = document.getElementById('costChart').getContext('2d');
-            if (costChart) costChart.destroy();
-            
-            costChart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: data.labels,
-                    datasets: [
-                        {
-                            label: 'Equity Value (£)',
-                            data: data.equity_values,
-                            borderColor: '#007bff',
-                            backgroundColor: 'rgba(0, 123, 255, 0.1)',
-                            fill: true,
-                            tension: 0.3
-                        },
-                        {
-                            label: 'Asset Resale Value (£)',
-                            data: data.asset_values,
-                            borderColor: '#dc3545',
-                            borderDash: [5, 5],
-                            fill: false,
-                            tension: 0.3
-                        }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: { labels: { color: '#e0e0e0' } }
-                    },
-                    scales: {
-                        y: { ticks: { color: '#e0e0e0' }, grid: { color: '#333' } },
-                        x: { ticks: { color: '#e0e0e0' }, grid: { color: '#333' } }
-                    }
-                }
-            });
-        });
-    </script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
-
-
