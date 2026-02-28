@@ -104,7 +104,7 @@ def calculate():
     ticker = data.get('ticker', 'AAPL')
     years = int(data.get('years', 5))
     is_subscription = data.get('is_subscription', False)
-    model_type = data.get('model_type', 'NB_AI') # Added this to match JS
+    model_type = data.get('model_type', 'historical') # Added this to match JS
     company_name = get_name_from_ticker(ticker)
 
     # Parallelise the API fetch
