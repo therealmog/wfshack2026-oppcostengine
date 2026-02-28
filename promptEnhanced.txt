@@ -1,0 +1,42 @@
+The Vibe-Coding Prompt
+Role: You are a Senior FinTech Developer.
+Project Name: "The Opportunity Cost Engine" (Equity-as-an-Expense Calculator).
+Objective: Build a single-page Django web app that helps users decide between a consumer purchase and a stock investment. Also consider for services (e.g. Netflix subscriptions - in this case, calculate price across a year based on monthly price.)
+
+Core Functionality:
+
+Input Panel: Create a clean form for:
+
+Item Name (e.g., "iPhone 17 Pro").
+
+Purchase Price in GBP (£) - user enters the price
+
+Stock Ticker (e.g., AAPL) - retrieved from the database.
+
+Investment Horizon (Slider from 1 to 10 years).
+
+The Comparison Engine:
+
+Asset Decay: Calculate the resale value of the item using an annual depreciation rate (changes depending on the item).
+
+Equity Growth: Calculate the projected value of that same initial amount invested in the stock. Use an annual compound return fetched from a financial API (i.e. different based on different companies).
+
+Visual Output:
+
+A beautiful, interactive Line Chart (using popular chart libraries) showing the "Value Gap" over time. One line for "Item Value" (going down) and one for "Investment Value" (going up).
+
+The "Free Item" Milestone: Calculate and display the exact month/year when the Dividends or average returns (using yFinance) would have paid for the original purchase price.
+
+UI/UX Vibe:
+
+Dark Mode by default with a "Bloomberg-esque" professional feel.
+
+Use popular UI frameworks (e.g. bootstrap) for icons/visual flair.
+
+Ensure all text uses British English spellings (e.g., "Capitalisation", "Organise").
+
+Include a "Financial Health" summary card at the bottom that gives a witty, data-driven "verdict" (e.g., "Buying this phone costs you a house deposit in 15 years. Is the camera that good?").
+
+Technical Constraint: * Keep the code modular and checkpointed.
+
+Use a mock data fetcher for stock prices initially so the app works immediately, but leave a clearly commented section to plug in a real API key.

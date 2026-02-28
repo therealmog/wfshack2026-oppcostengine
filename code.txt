@@ -1,0 +1,323 @@
+RAASCLART PRODUCTIONS TRADEMARK
+RAASCLART PRODUCTIONS
+RAASCLART PRODUCTIONS
+RAASCLART PRODUCTIONS
+RAASCLART PRODUCTIONS
+
+
+
+--------------------------------------------------------------------------------------------
+------------------------------app.py-------------------------------------------------------
+
+from flask import Flask, render_template, request, jsonify
+import yfinance as yf
+import concurrent.futures
+import traceback
+
+app = Flask(__name__)
+
+# --- CHECKPOINTED MOCK DATA ---
+# Fallback data if the real API fails during the hackathon demonstration
+MOCK_TICKERS = {
+    "AAPL": {"return": 0.25, "dividend": 0.005},
+    "TSLA": {"return": 0.40, "dividend": 0.0},
+    "NFLX": {"return": 0.15, "dividend": 0.0},
+    "SBUX": {"return": 0.08, "dividend": 0.02}
+}
+
+DEPRECIATION_RATES = {
+    "tech": 0.20,
+    "car": 0.15,
+    "subscription": 1.0, # Subscriptions have zero resale value
+    "other": 0.10
+}
+
+def fetch_financial_data(ticker_symbol):
+    """
+    Attempts to fetch real data via yfinance. 
+    Checkpoints to mock data on runtime error.
+    """
+    try:
+        # REAL API CALL (Checkpointed)
+        ticker = yf.Ticker(ticker_symbol)
+        hist = ticker.history(period="5y")
+        if hist.empty:
+            raise ValueError("No historical data found.")
+            
+        start_price = hist['Close'].iloc[0]
+        end_price = hist['Close'].iloc[-1]
+        
+        # Calculate 5-year CAGR (Compound Annual Growth Rate)
+        cagr = (end_price / start_price) ** (1/5) - 1
+        
+        # Approximate dividend yield
+        div_yield = ticker.info.get('dividendYield', 0.0)
+        if div_yield is None: div_yield = 0.0
+            
+        return {"return": float(cagr), "dividend": float(div_yield)}
+        
+    except Exception as e:
+        print(f"Runtime error fetching {ticker_symbol}, using checkpointed mock data: {e}")
+        # Fallback to mock data to prevent app crash
+        return MOCK_TICKERS.get(ticker_symbol.upper(), {"return": 0.08, "dividend": 0.01})
+
+def calculate_projection(price, is_subscription, years, fin_data, category):
+    """Calculates the trajectory of the asset vs the equity."""
+    annual_return = fin_data['return']
+    div_yield = fin_data['dividend']
+    depreciation = DEPRECIATION_RATES.get(category, 0.20)
+    
+    labels = []
+    asset_values = []
+    equity_values = []
+    
+    current_asset_val = price if not is_subscription else 0
+    current_equity_val = price if not is_subscription else 0
+    annual_cost = price * 12 if is_subscription else 0
+
+    for year in range(0, years + 1):
+        labels.append(f"Year {year}")
+        
+        if year == 0:
+            asset_values.append(current_asset_val)
+            equity_values.append(current_equity_val)
+            continue
+            
+        # Asset Decay
+        if not is_subscription:
+            current_asset_val = current_asset_val * (1 - depreciation)
+        asset_values.append(round(current_asset_val, 2))
+        
+        # Equity Growth
+        if is_subscription:
+            # Future value of a series for monthly subscriptions
+            current_equity_val += annual_cost
+            current_equity_val = current_equity_val * (1 + annual_return + div_yield)
+        else:
+            # Standard compound growth
+            current_equity_val = current_equity_val * (1 + annual_return + div_yield)
+            
+        equity_values.append(round(current_equity_val, 2))
+        
+    # Calculate the "Free Item" milestone (when returns > original price)
+    milestone = "Never"
+    if current_equity_val > price:
+        for i, val in enumerate(equity_values):
+            if (val - price) >= price: # Profit equals the original cost
+                milestone = f"Year {i}"
+                break
+
+    return {
+        "labels": labels,
+        "asset_values": asset_values,
+        "equity_values": equity_values,
+        "milestone": milestone,
+        "final_equity": round(equity_values[-1], 2)
+    }
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/calculate', methods=['POST'])
+def calculate():
+    data = request.json
+    item_name = data.get('item_name', 'Item')
+    price = float(data.get('price', 0))
+    ticker = data.get('ticker', 'AAPL')
+    years = int(data.get('years', 5))
+    is_subscription = data.get('is_subscription', False)
+    category = data.get('category', 'tech')
+
+    # Parallelise the API fetch and any background processing
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        future_fin_data = executor.submit(fetch_financial_data, ticker)
+        fin_data = future_fin_data.result()
+
+    results = calculate_projection(price, is_subscription, years, fin_data, category)
+    
+    # Generate the witty verdict
+    verdict = ""
+    if is_subscription:
+        verdict = f"That £{price}/month habit costs you £{results['final_equity']} in lost capitalisation over {years} years. Time to cancel?"
+    else:
+        verdict = f"Buying this {item_name} sacrifices £{results['final_equity']} in potential wealth. Is the dopamine hit really worth it?"
+
+    results['verdict'] = verdict
+    return jsonify(results)
+
+if __name__ == '__main__':
+    app.run(debug=True, threaded=True)
+
+-----------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------index.html---------------------------------------------------------------
+
+
+HTML<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Opportunity Cost Engine</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { background-color: #121212; color: #e0e0e0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        .card { background-color: #1e1e1e; border: 1px solid #333; }
+        .btn-primary { background-color: #007bff; border-color: #007bff; }
+        .verdict-box { border-left: 4px solid #007bff; background-color: #1a222b; padding: 15px; border-radius: 4px; }
+    </style>
+</head>
+<body class="py-5">
+    <div class="container">
+        <header class="pb-3 mb-4 border-bottom">
+            <h1 class="fs-4 fw-bold">The Opportunity Cost Engine</h1>
+            <p class="text-muted">Analyse the true weight of your financial decisions.</p>
+        </header>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card p-4 h-100">
+                    <h5 class="mb-3">Transaction Details</h5>
+                    <form id="calcForm">
+                        <div class="mb-3">
+                            <label class="form-label">Item or Service Name</label>
+                            <input type="text" class="form-control bg-dark text-light border-secondary" id="itemName" placeholder="e.g. iPhone 17 Pro" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Price (£)</label>
+                            <input type="number" class="form-control bg-dark text-light border-secondary" id="price" required>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="isSubscription">
+                            <label class="form-check-label" for="isSubscription">
+                                This is a monthly subscription
+                            </label>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Item Category</label>
+                            <select class="form-select bg-dark text-light border-secondary" id="category">
+                                <option value="tech">Technology (e.g. Phone, Laptop)</option>
+                                <option value="car">Vehicle</option>
+                                <option value="other">Other Goods</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Alternative Stock Ticker</label>
+                            <input type="text" class="form-control bg-dark text-light border-secondary" id="ticker" value="AAPL" required>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label">Investment Horizon: <span id="yearValue">5</span> Years</label>
+                            <input type="range" class="form-range" id="years" min="1" max="10" value="5" oninput="document.getElementById('yearValue').innerText = this.value">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 fw-bold">Analyse Cost</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <div class="card p-4 mb-4">
+                    <canvas id="costChart" height="120"></canvas>
+                </div>
+                
+                <div class="row text-center mb-4">
+                    <div class="col-6">
+                        <div class="card p-3">
+                            <h6 class="text-muted mb-1">Free Item Milestone</h6>
+                            <h3 class="text-success mb-0" id="milestoneOut">-</h3>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card p-3">
+                            <h6 class="text-muted mb-1">Final Equity Value</h6>
+                            <h3 class="text-primary mb-0" id="equityOut">-</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="verdict-box d-none" id="verdictBox">
+                    <h6 class="fw-bold mb-1">Financial Health Verdict</h6>
+                    <p class="mb-0 text-light" id="verdictText"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let costChart;
+
+        document.getElementById('calcForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const payload = {
+                item_name: document.getElementById('itemName').value,
+                price: document.getElementById('price').value,
+                is_subscription: document.getElementById('isSubscription').checked,
+                category: document.getElementById('category').value,
+                ticker: document.getElementById('ticker').value,
+                years: document.getElementById('years').value
+            };
+
+            const response = await fetch('/calculate', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+            
+            const data = await response.json();
+            
+            // Update UI metrics
+            document.getElementById('milestoneOut').innerText = data.milestone;
+            document.getElementById('equityOut').innerText = '£' + data.final_equity.toLocaleString();
+            
+            const verdictBox = document.getElementById('verdictBox');
+            verdictBox.classList.remove('d-none');
+            document.getElementById('verdictText').innerText = data.verdict;
+
+            // Render Chart
+            const ctx = document.getElementById('costChart').getContext('2d');
+            if (costChart) costChart.destroy();
+            
+            costChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: data.labels,
+                    datasets: [
+                        {
+                            label: 'Equity Value (£)',
+                            data: data.equity_values,
+                            borderColor: '#007bff',
+                            backgroundColor: 'rgba(0, 123, 255, 0.1)',
+                            fill: true,
+                            tension: 0.3
+                        },
+                        {
+                            label: 'Asset Resale Value (£)',
+                            data: data.asset_values,
+                            borderColor: '#dc3545',
+                            borderDash: [5, 5],
+                            fill: false,
+                            tension: 0.3
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { labels: { color: '#e0e0e0' } }
+                    },
+                    scales: {
+                        y: { ticks: { color: '#e0e0e0' }, grid: { color: '#333' } },
+                        x: { ticks: { color: '#e0e0e0' }, grid: { color: '#333' } }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+http://127.0.0.1:5000
+pip install flask yfinance
