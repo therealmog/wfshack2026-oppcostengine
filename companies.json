@@ -84,7 +84,7 @@
         "ticker": "ALL"
     },
     {
-        "name": "Alphabet Inc. (Class A) (Android, Pixel, YouTube)",
+        "name": "Alphabet Inc. (Class A)",
         "ticker": "GOOGL"
     },
     {
@@ -96,7 +96,7 @@
         "ticker": "MO"
     },
     {
-        "name": "Amazon (Prime, Kindle, Echo/Alexa)",
+        "name": "Amazon",
         "ticker": "AMZN"
     },
     {
@@ -156,7 +156,7 @@
         "ticker": "APO"
     },
     {
-        "name": "Apple Inc. (iPhone, iPad, Mac, AirPods)",
+        "name": "Apple Inc.",
         "ticker": "AAPL"
     },
     {
@@ -224,12 +224,8 @@
         "ticker": "BK"
     },
     {
-        "name": "BP",
+        "name": "BP plc",
         "ticker": "BP.L"
-    },
-    {
-        "name": "BT Group",
-        "ticker": "BT-A.L"
     },
     {
         "name": "BXP, Inc.",
@@ -304,6 +300,10 @@
         "ticker": "BMY"
     },
     {
+        "name": "British American Tobacco",
+        "ticker": "BATS.L"
+    },
+    {
         "name": "Broadcom",
         "ticker": "AVGO"
     },
@@ -316,7 +316,7 @@
         "ticker": "BRO"
     },
     {
-        "name": "Brown\u2013Forman",
+        "name": "Brown Forman",
         "ticker": "BF.B"
     },
     {
@@ -326,10 +326,6 @@
     {
         "name": "Bunge Global",
         "ticker": "BG"
-    },
-    {
-        "name": "Burberry",
-        "ticker": "BRBY.L"
     },
     {
         "name": "C.H. Robinson",
@@ -376,7 +372,7 @@
         "ticker": "CPT"
     },
     {
-        "name": "Campbell's Company (The)",
+        "name": "Campbell's Company",
         "ticker": "CPB"
     },
     {
@@ -480,7 +476,7 @@
         "ticker": "CSGP"
     },
     {
-        "name": "Coca-Cola Company (The)",
+        "name": "Coca-Cola Company",
         "ticker": "KO"
     },
     {
@@ -520,7 +516,7 @@
         "ticker": "CEG"
     },
     {
-        "name": "Cooper Companies (The)",
+        "name": "Cooper Companies",
         "ticker": "COO"
     },
     {
@@ -612,7 +608,7 @@
         "ticker": "DXCM"
     },
     {
-        "name": "Diageo (Guinness, Smirnoff, Tanqueray)",
+        "name": "Diageo",
         "ticker": "DGE.L"
     },
     {
@@ -692,7 +688,7 @@
         "ticker": "EW"
     },
     {
-        "name": "Electronic Arts (FC 24, FIFA, Sims)",
+        "name": "Electronic Arts",
         "ticker": "EA"
     },
     {
@@ -732,7 +728,7 @@
         "ticker": "ESS"
     },
     {
-        "name": "Est\u00e9e Lauder Companies (The)",
+        "name": "Este Lauder Companies",
         "ticker": "EL"
     },
     {
@@ -856,6 +852,10 @@
         "ticker": "GEV"
     },
     {
+        "name": "GSK plc",
+        "ticker": "GSK.L"
+    },
+    {
         "name": "Garmin",
         "ticker": "GRMN"
     },
@@ -892,6 +892,10 @@
         "ticker": "GILD"
     },
     {
+        "name": "Glencore",
+        "ticker": "GLEN.L"
+    },
+    {
         "name": "Global Payments",
         "ticker": "GPN"
     },
@@ -908,10 +912,6 @@
         "ticker": "GS"
     },
     {
-        "name": "Greggs",
-        "ticker": "GRG.L"
-    },
-    {
         "name": "HCA Healthcare",
         "ticker": "HCA"
     },
@@ -920,7 +920,7 @@
         "ticker": "HPQ"
     },
     {
-        "name": "HSBC",
+        "name": "HSBC Holdings",
         "ticker": "HSBA.L"
     },
     {
@@ -928,7 +928,7 @@
         "ticker": "HAL"
     },
     {
-        "name": "Hartford (The)",
+        "name": "Hartford",
         "ticker": "HIG"
     },
     {
@@ -944,7 +944,7 @@
         "ticker": "HSIC"
     },
     {
-        "name": "Hershey Company (The)",
+        "name": "Hershey Company",
         "ticker": "HSY"
     },
     {
@@ -960,7 +960,7 @@
         "ticker": "HOLX"
     },
     {
-        "name": "Home Depot (The)",
+        "name": "Home Depot",
         "ticker": "HD"
     },
     {
@@ -1044,7 +1044,7 @@
         "ticker": "IP"
     },
     {
-        "name": "Interpublic Group of Companies (The)",
+        "name": "Interpublic Group of Companies",
         "ticker": "IPG"
     },
     {
@@ -1072,12 +1072,8 @@
         "ticker": "JBHT"
     },
     {
-        "name": "J.M. Smucker Company (The)",
+        "name": "J.M. Smucker Company",
         "ticker": "SJM"
-    },
-    {
-        "name": "JD Sports",
-        "ticker": "JD.L"
     },
     {
         "name": "JPMorgan Chase",
@@ -1188,7 +1184,7 @@
         "ticker": "LII"
     },
     {
-        "name": "Lilly (Eli)",
+        "name": "Lilly",
         "ticker": "LLY"
     },
     {
@@ -1198,10 +1194,6 @@
     {
         "name": "Live Nation Entertainment",
         "ticker": "LYV"
-    },
-    {
-        "name": "Lloyds Banking Group",
-        "ticker": "LLOY.L"
     },
     {
         "name": "Lockheed Martin",
@@ -1216,7 +1208,7 @@
         "ticker": "LOW"
     },
     {
-        "name": "Lululemon Athletica (Yoga Pants, Activewear)",
+        "name": "Lululemon Athletica",
         "ticker": "LULU"
     },
     {
@@ -1242,10 +1234,6 @@
     {
         "name": "MarketAxess",
         "ticker": "MKTX"
-    },
-    {
-        "name": "Marks & Spencer (Foodhall, Quality Clothing)",
-        "ticker": "MKS.L"
     },
     {
         "name": "Marriott International",
@@ -1276,7 +1264,7 @@
         "ticker": "MKC"
     },
     {
-        "name": "McDonald's (Big Mac, Fast Food)",
+        "name": "McDonald's",
         "ticker": "MCD"
     },
     {
@@ -1296,7 +1284,7 @@
         "ticker": "MET"
     },
     {
-        "name": "Meta Platforms (Instagram, WhatsApp, Quest VR)",
+        "name": "Meta Platforms",
         "ticker": "META"
     },
     {
@@ -1312,7 +1300,7 @@
         "ticker": "MU"
     },
     {
-        "name": "Microsoft (Xbox, Surface, Windows)",
+        "name": "Microsoft",
         "ticker": "MSFT"
     },
     {
@@ -1356,7 +1344,7 @@
         "ticker": "MS"
     },
     {
-        "name": "Mosaic Company (The)",
+        "name": "Mosaic Company ",
         "ticker": "MOS"
     },
     {
@@ -1380,15 +1368,11 @@
         "ticker": "NDAQ"
     },
     {
-        "name": "NatWest",
-        "ticker": "NWG.L"
-    },
-    {
         "name": "NetApp",
         "ticker": "NTAP"
     },
     {
-        "name": "Netflix (Streaming Subscription)",
+        "name": "Netflix",
         "ticker": "NFLX"
     },
     {
@@ -1404,10 +1388,6 @@
         "ticker": "NWS"
     },
     {
-        "name": "Next (Clothing, Home Decor)",
-        "ticker": "NXT.L"
-    },
-    {
         "name": "NextEra Energy",
         "ticker": "NEE"
     },
@@ -1416,7 +1396,7 @@
         "ticker": "NI"
     },
     {
-        "name": "Nike, Inc. (Trainers, Jordans, Activewear)",
+        "name": "Nike, Inc.",
         "ticker": "NKE"
     },
     {
@@ -1444,7 +1424,7 @@
         "ticker": "NUE"
     },
     {
-        "name": "Nvidia (Graphics Cards, RTX, AI Tech)",
+        "name": "Nvidia",
         "ticker": "NVDA"
     },
     {
@@ -1476,7 +1456,7 @@
         "ticker": "OTIS"
     },
     {
-        "name": "O\u2019Reilly Automotive",
+        "name": "OReilly Automotive",
         "ticker": "ORLY"
     },
     {
@@ -1648,16 +1628,16 @@
         "ticker": "RVTY"
     },
     {
+        "name": "Rio Tinto",
+        "ticker": "RIO.L"
+    },
+    {
         "name": "Rockwell Automation",
         "ticker": "ROK"
     },
     {
         "name": "Rollins, Inc.",
         "ticker": "ROL"
-    },
-    {
-        "name": "Rolls-Royce (Jet Engines, Luxury Cars)",
-        "ticker": "RR.L"
     },
     {
         "name": "Roper Technologies",
@@ -1680,10 +1660,6 @@
         "ticker": "SBAC"
     },
     {
-        "name": "Sainsbury's (Groceries, Argos)",
-        "ticker": "SBRY.L"
-    },
-    {
         "name": "Salesforce",
         "ticker": "CRM"
     },
@@ -1704,7 +1680,7 @@
         "ticker": "NOW"
     },
     {
-        "name": "Shell",
+        "name": "Shell plc",
         "ticker": "SHEL.L"
     },
     {
@@ -1744,7 +1720,7 @@
         "ticker": "SWK"
     },
     {
-        "name": "Starbucks (Coffee, Frappuccino)",
+        "name": "Starbucks",
         "ticker": "SBUX"
     },
     {
@@ -1800,7 +1776,7 @@
         "ticker": "TKO"
     },
     {
-        "name": "Take-Two Interactive (GTA V, Red Dead Redemption)",
+        "name": "Take-Two Interactive",
         "ticker": "TTWO"
     },
     {
@@ -1824,11 +1800,11 @@
         "ticker": "TER"
     },
     {
-        "name": "Tesco (Groceries, Clubcard)",
+        "name": "Tesco",
         "ticker": "TSCO.L"
     },
     {
-        "name": "Tesla, Inc. (Model 3, Model Y, Solar)",
+        "name": "Tesla, Inc.",
         "ticker": "TSLA"
     },
     {
@@ -1852,7 +1828,7 @@
         "ticker": "TSCO"
     },
     {
-        "name": "Trade Desk (The)",
+        "name": "Trade Desk",
         "ticker": "TTD"
     },
     {
@@ -1864,7 +1840,7 @@
         "ticker": "TDG"
     },
     {
-        "name": "Travelers Companies (The)",
+        "name": "Travelers Companies",
         "ticker": "TRV"
     },
     {
@@ -1900,7 +1876,7 @@
         "ticker": "ULTA"
     },
     {
-        "name": "Unilever (Dove, Ben & Jerry's, Magnum)",
+        "name": "Unilever",
         "ticker": "ULVR.L"
     },
     {
@@ -1972,10 +1948,6 @@
         "ticker": "VST"
     },
     {
-        "name": "Vodafone (Mobile Contract, Broadband)",
-        "ticker": "VOD.L"
-    },
-    {
         "name": "Vulcan Materials Company",
         "ticker": "VMC"
     },
@@ -2004,7 +1976,7 @@
         "ticker": "WMT"
     },
     {
-        "name": "Walt Disney Company (The) (Disney+, Marvel, Star Wars)",
+        "name": "Walt Disney Company",
         "ticker": "DIS"
     },
     {
@@ -2086,9 +2058,5 @@
     {
         "name": "eBay Inc.",
         "ticker": "EBAY"
-    },
-    {
-        "name": "easyJet (Flights, Holidays)",
-        "ticker": "EZJ.L"
     }
 ]

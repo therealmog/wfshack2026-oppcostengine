@@ -1,4 +1,21 @@
 {
-    "Product":["Buying this {product} misses out on {profit} in gains over {years} years. Investing this cash instead could be more worth it.",
+    "products_positive":["Buying this {product} misses out on {profit} in gains over {years} years. Investing this cash instead could be more worth it.",
                "Purchasing a {product} might not worth it; you could gain {profit} on top of your investment over {years} years instead.",
-               "Maybe investing in {"]}
+               "Investing in {company_name} could obtain {profit} profit over {years} years.",
+               "Hold on, investing in {company_name} could be beneficial - you could gain {profit} profit over {years} years.",
+                "Buying this {product} would mean forgoing approximately {profit} in potential gains over {years} years.",
+                "Allocating funds to {product} instead of investing could result in an opportunity cost of {profit} over {years} years.",
+                "Over a {years}-year period, investing could generate an additional {profit} compared to purchasing {product}.",
+                "You might be giving up {profit} of potential gains over {years} years for this {product}.",
+                "Projected returns indicate an additional {profit} over {years} years if invested instead of spent on {product}.",
+                "Compound growth modelling shows a potential gain of {profit} across {years} years."],
+    "products_negative":["Looks like buying {product} would be beneficial compared to investing in {company_name}.",
+                "Compared to investing in {company_name}, buying that {product} might be better.",
+                "Based on historical returns, buying {product} would have outperformed investing in {company_name}.",
+                "The data suggests you'd be better off purchasing {product} rather than investing in {company_name}.",
+                "Shares in {company_name} didn't keep up with the value of {product}.",
+                "Surprisingly, {product} beats investing in {company_name}.",
+                "You might have been better off enjoying {product} than holding {company_name} stock.",
+                "If you had invested in {company_name}, your returns would trail behind the cost of {product}.",
+                "Adjusted for growth, {product} represents the stronger financial outcome.",
+                "After factoring in returns, {product} proves more rewarding than {company_name} shares."]}

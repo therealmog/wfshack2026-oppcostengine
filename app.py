@@ -4,12 +4,15 @@
 #################################################
 #################################################
 
-
 from flask import Flask, render_template, request, jsonify
 import yfinance as yf
 import concurrent.futures
 import json
 import os
+from random import choice
+import numpy as np
+from sklearn.linear_model import LinearRegression
+from textblob import TextBlob
 
 app = Flask(__name__)
 
@@ -26,21 +29,68 @@ def load_company_database():
 COMPANY_DB = load_company_database()
 
 def fetch_financial_data(ticker_symbol):
-    """Fetches real-market data with a fallback to 8% return if the API fails."""
+   """Fetches real-market data with a fallback to 8% return if the API fails."""
+   try:
+       ticker = yf.Ticker(ticker_symbol)
+       # Using 5-year history to calculate historical CAGR
+       hist = ticker.history(period="5y")
+       if hist.empty:
+           return {"return": 0.08, "dividend": 0.01}
+          
+       start_price = hist['Close'].iloc[0]
+       end_price = hist['Close'].iloc[-1]
+       cagr = (end_price / start_price) ** (1/5) - 1
+       div_yield = ticker.info.get('dividendYield', 0.01) or 0.01
+       return {"return": float(cagr), "dividend": float(div_yield)}
+   except Exception:
+       return {"return": 0.08, "dividend": 0.01}
+
+def GBM_model(ticker_symbol):
     try:
         ticker = yf.Ticker(ticker_symbol)
-        # Using 5-year history to calculate historical CAGR
         hist = ticker.history(period="5y")
         if hist.empty:
-            return {"return": 0.08, "dividend": 0.01}
+            return {"mu": 0.08, "sigma": 0.15} # Reasonable defaults
             
-        start_price = hist['Close'].iloc[0]
-        end_price = hist['Close'].iloc[-1]
-        cagr = (end_price / start_price) ** (1/5) - 1
-        div_yield = ticker.info.get('dividendYield', 0.01) or 0.01
-        return {"return": float(cagr), "dividend": float(div_yield)}
+        # Log returns are more accurate for GBM math
+        log_returns = np.log(hist['Close'] / hist['Close'].shift(1)).dropna()
+        
+        # Annualize (252 trading days)
+        drift = log_returns.mean() * 252
+        volatility = log_returns.std() * np.sqrt(252)
+        
+        return {"mu": float(drift), "sigma": float(volatility)}
     except Exception:
-        return {"return": 0.08, "dividend": 0.01}
+        return {"mu": 0.08, "sigma": 0.20}
+
+def get_ai_growth_rate(ticker_symbol):
+    try:
+        ticker = yf.Ticker(ticker_symbol)
+        hist = ticker.history(period="2y")
+        if hist.empty:
+            return 0.07 
+        
+        prices = hist['Close'].values.reshape(-1, 1)
+        days = np.arange(len(prices)).reshape(-1, 1)
+        
+        model = LinearRegression()
+        model.fit(days, prices)
+        
+        current_price = prices[-1][0]
+        predicted_annual_change = (model.coef_[0][0] * 252) / current_price
+        
+        sentiment_adjustment = 0
+        news = ticker.news
+        if news:
+            scores = [TextBlob(n['title']).sentiment.polarity for n in news[:5]]
+            avg_sentiment = sum(scores) / len(scores)
+            sentiment_adjustment = avg_sentiment * 0.05
+
+        total_rate = predicted_annual_change + sentiment_adjustment
+        return max(min(total_rate, 0.35), -0.15)
+    except Exception as e:
+        print(f"AI Prediction Error: {e}")
+        return 0.07
 
 @app.route('/')
 def index():
@@ -54,6 +104,8 @@ def calculate():
     ticker = data.get('ticker', 'AAPL')
     years = int(data.get('years', 5))
     is_subscription = data.get('is_subscription', False)
+    model_type = data.get('model_type', 'NB_AI') # Added this to match JS
+    company_name = get_name_from_ticker(ticker)
 
     # Parallelise the API fetch
     with concurrent.futures.ThreadPoolExecutor() as executor:
@@ -75,7 +127,6 @@ def calculate():
             equity_values.append(round(curr_equity, 2))
             continue
 
-        # Depreciation: 20% for tech/general, 100% for subscriptions
         deprec_rate = 1.0 if is_subscription else 0.20
         curr_asset *= (1 - deprec_rate)
         
@@ -87,21 +138,29 @@ def calculate():
         asset_values.append(round(curr_asset, 2))
         equity_values.append(round(curr_equity, 2))
 
-    # Formatting Verdict (British Standards)
     final_val = equity_values[-1]
     formatted_equity = f"£{final_val:,.2f}"
-    profit = f"£{(final_val - price):,.2f}"
-    
+
+    # Calculate profit (Opportunity Cost)
+    base_cost = (price * 12 * years) if is_subscription else price
+    profit_val = final_val - base_cost
+    profit_str = f"£{abs(profit_val):,.2f}"
+
     milestone = "Never"
     for i, val in enumerate(equity_values):
-        if val >= (price * 2 if not is_subscription else price * 24):
+        threshold = (price * 2 if not is_subscription else price * 24)
+        if val >= threshold:
             milestone = f"Year {i}"
             break
 
+    # Verdict Logic with correctly passed arguments for .format()
     if is_subscription:
-        verdict = f"Paying £{price:,.2f}/month for {product_name} sacrifices {profit} in potential wealth gain over {years} years. Time to cancel?"
+        verdict = f"Paying £{price:,.2f}/month for {product_name} sacrifices {profit_str} in potential wealth gain over {years} years. Time to cancel?"
     else:
-        verdict = f"Buying {product_name} sacrifices {profit} in potential wealth gain over {years} years. Is the dopamine hit really worth it?"
+        is_pos = profit_val > 0
+        verdict_template = get_verdict(isPositive=is_pos, isProduct=True)
+        # FIX: Added profit=profit_str and product=product_name to the format call
+        verdict = verdict_template.format(product=product_name, profit=profit_str,years=years,company_name=company_name)
 
     return jsonify({
         "labels": labels, "asset_values": asset_values, "equity_values": equity_values,
@@ -112,10 +171,19 @@ def get_name_from_ticker(ticker):
     for companyDetails in COMPANY_DB:
         if companyDetails["ticker"] == ticker:
             return companyDetails["name"]
-        
+    return ticker
+
+def get_verdict(isPositive, isProduct):
+    with open("verdicts.json", "r") as f:
+        verdictsDict = json.load(f)
+    
+    if isPositive:
+        return choice(verdictsDict["products_positive"]) if isProduct else "Positive Sub Verdict"
+    else:
+        return choice(verdictsDict["products_negative"]) if isProduct else "Negative Sub Verdict"
+
 if __name__ == '__main__':
     app.run(debug=True)
-
 
 #################################################
 #################################################
