@@ -63,6 +63,41 @@ def GBM_model(ticker_symbol):
     except Exception:
         return {"mu": 0.08, "sigma": 0.20}
 
+def BS_method():
+    pass
+
+def run_gbm_simulation(price, years, mu, sigma, is_subscription, n_sims=100):
+    """
+    Core GBM Engine: Generates stochastic paths using Monte Carlo.
+    Returns: (median_path, upper_path, lower_path)
+    """
+    # Create matrix: Rows = Simulations, Cols = Years
+    paths = np.zeros((n_sims, years + 1))
+    
+    # Starting value
+    initial_val = price if not is_subscription else (price * 12)
+    paths[:, 0] = initial_val
+
+    for t in range(1, years + 1):
+        # Generate random shocks for all sims at once
+        Z = np.random.standard_normal(n_sims)
+        
+        # GBM Equation: exp((drift - vol_drag) + volatility * shock)
+        growth_factors = np.exp((mu - 0.5 * sigma**2) + sigma * Z)
+        
+        if is_subscription:
+            # Compound existing wealth + add new annual subscription cost
+            paths[:, t] = (paths[:, t-1] * growth_factors) + (price * 12)
+        else:
+            paths[:, t] = paths[:, t-1] * growth_factors
+
+    # Calculate percentiles (10th, 50th, 90th) across the horizontal axis
+    median = np.percentile(paths, 50, axis=0).tolist()
+    upper = np.percentile(paths, 90, axis=0).tolist()
+    lower = np.percentile(paths, 10, axis=0).tolist()
+    
+    return median, upper, lower
+
 def get_ai_growth_rate(ticker_symbol):
     try:
         ticker = yf.Ticker(ticker_symbol)
@@ -104,41 +139,81 @@ def calculate():
     ticker = data.get('ticker', 'AAPL')
     years = int(data.get('years', 5))
     is_subscription = data.get('is_subscription', False)
-    model_type = data.get('model_type', 'historical') # Added this to match JS
+    
+    # Get model choice from frontend: 'historical' or 'gbm'
+    model_type = data.get('model_type', 'historical') 
     company_name = get_name_from_ticker(ticker)
 
-    # Parallelise the API fetch
+    # Fetch financial parameters
     with concurrent.futures.ThreadPoolExecutor() as executor:
         future = executor.submit(fetch_financial_data, ticker)
         fin_data = future.result()
 
-    annual_growth = fin_data['return'] + fin_data['dividend']
-    labels, asset_values, equity_values = [], [], []
-    
-    # Calculation Logic (Scientific Methodology)
-    curr_asset = price if not is_subscription else 0
-    curr_equity = price if not is_subscription else 0
-    annual_sub_cost = price * 12 if is_subscription else 0
+    # --- MODEL SELECTION ---
+    upper_equity, lower_equity = [], [] # Default empty for non-GBM
 
-    for year in range(years + 1):
-        labels.append(f"Year {year}")
-        if year == 0:
+    if model_type == 'gbm':
+        # ONLY runs if GBM is selected
+        mu = fin_data.get('mu', 0.08)
+        sigma = fin_data.get('sigma', 0.15)
+        
+        equity_values, upper_equity, lower_equity = run_gbm_simulation(
+            price, years, mu, sigma, is_subscription
+        )
+
+    elif model_type == "NB_AI":
+        # Uses your Regression + Sentiment logic
+        annual_growth = get_ai_growth_rate(ticker)
+        labels, asset_values, equity_values = [], [], []
+
+        curr_asset = price if not is_subscription else 0
+        curr_equity = price if not is_subscription else 0
+        annual_sub_cost = price * 12 if is_subscription else 0
+
+        for year in range(years + 1):
+            labels.append(f"Year {year}")
+            if year == 0:
+                asset_values.append(round(curr_asset, 2))
+                equity_values.append(round(curr_equity, 2))
+                continue
+
+            deprec_rate = 1.0 if is_subscription else 0.20
+            curr_asset *= (1 - deprec_rate)
+            
+            if is_subscription:
+                curr_equity = (curr_equity + annual_sub_cost) * (1 + annual_growth)
+            else:
+                curr_equity *= (1 + annual_growth)
+
             asset_values.append(round(curr_asset, 2))
             equity_values.append(round(curr_equity, 2))
-            continue
 
-        deprec_rate = 1.0 if is_subscription else 0.20
-        curr_asset *= (1 - deprec_rate)
-        
-        if is_subscription:
-            curr_equity = (curr_equity + annual_sub_cost) * (1 + annual_growth)
-        else:
-            curr_equity *= (1 + annual_growth)
 
-        asset_values.append(round(curr_asset, 2))
-        equity_values.append(round(curr_equity, 2))
+    else:
+        # ORIGINAL Historical Trend Logic
+        annual_growth = fin_data.get('return', 0.08) + fin_data.get('dividend', 0.01)
+        equity_values = []
+        curr_equity = price if not is_subscription else 0
+        annual_sub_cost = price * 12 if is_subscription else 0
 
+        for year in range(years + 1):
+            if year == 0:
+                equity_values.append(round(curr_equity, 2))
+                continue
+            if is_subscription:
+                curr_equity = (curr_equity + annual_sub_cost) * (1 + annual_growth)
+            else:
+                curr_equity *= (1 + annual_growth)
+            equity_values.append(round(curr_equity, 2))
+
+    # --- SHARED LOGIC (Depreciation & Verdict) ---
     final_val = equity_values[-1]
+    asset_values = []
+    temp_asset = price if not is_subscription else 0
+    for y in range(years + 1):
+        asset_values.append(round(temp_asset, 2))
+        temp_asset *= 0.80
+
     formatted_equity = f"£{final_val:,.2f}"
 
     # Calculate profit (Opportunity Cost)
@@ -163,8 +238,13 @@ def calculate():
         verdict = verdict_template.format(product=product_name, profit=profit_str,years=years,company_name=company_name)
 
     return jsonify({
-        "labels": labels, "asset_values": asset_values, "equity_values": equity_values,
-        "milestone": milestone, "final_equity": final_val, "verdict": verdict
+        "labels": [f"Year {i}" for i in range(years + 1)],
+        "asset_values": asset_values,
+        "equity_values": equity_values,
+        "upper_equity": upper_equity,
+        "lower_equity": lower_equity,
+        "final_equity": final_val,
+        "verdict": verdict
     })
 
 def get_name_from_ticker(ticker):
