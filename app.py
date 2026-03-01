@@ -352,7 +352,7 @@ def get_verdict(isPositive, isProduct):
     # Match statement for the different possibilities
     match(isProduct,isPositive):
         case(True,True):
-            return choice(verdictsDict["products_positive"])
+            return choice(verdictsDict["products_positive"]) + "\nHowever, the utility you might get out of this product could be worth it."
         case(True,False):
             return choice(verdictsDict["products_negative"])
         case(False,True):

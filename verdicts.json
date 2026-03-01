@@ -1,6 +1,6 @@
 {
     "products_positive":["Buying this {product} misses out on {profit} in gains over {years} years. Investing this cash instead could be more worth it.",
-               "Purchasing a {product} might not be worth it; you could gain {profit} on top of your investment over {years} years instead.",
+               "Purchasing {product} might not be worth it; you could gain {profit} on top of your investment over {years} years instead.",
                "Investing in {company_name} could obtain {profit} profit over {years} years.",
                "Hold on, investing in {company_name} could be beneficial - you could gain {profit} profit over {years} years.",
                 "Buying this {product} would mean forgoing approximately {profit} in potential gains over {years} years.",
@@ -21,8 +21,8 @@
                 "After factoring in returns, {product} proves more rewarding than {company_name} shares."],
     "subscriptions_positive":["Paying {price}/month for {product} could cost you {profit} in potential gains over {years} years if invested in {company_name} instead.",
                 "Redirecting that {price}/month into {company_name} may generate {profit} over {years} years.",
-                "Small monthly payments add up — potentially {profit} in {years} years.",
-                "That subscription might quietly cost you {profit} over time.",
+                "Small monthly payments add up - potentially {profit} in {years} years.",
+                "That {product} subscription might quietly cost you {profit} over time.",
                 "Investing that {price}/month could look a lot better in {years} years.",
                 "At historical returns, this subscription could represent {profit} in forgone gains."],
     "subscriptions_negative":["Based on projections, {company_name} might underperform relative to keeping your {product} subscription.",
