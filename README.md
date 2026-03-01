@@ -1,4 +1,5 @@
 # wfs-hackathon-RAAS
+Authors: Amogh Naik Gaunekar, Alan Siby, Rakhshethan Subenthiran, Shane Sebastian
 # Opportunity Cost Engine
 # Category 2: Financial Inclusion
 
