@@ -1,31 +1,39 @@
 # wfs-hackathon-RAAS
 # Opportunity Cost Engine
-## Problem
+# Category 2: Financial Inclusion
 
-People routinely spend money on products without grasping the financial implications beyond the immediate purchase. The underlying issue is a __lack of awareness__ about opportunity cost: the fact that every dollar spent on a depreciating item is a dollar not invested in an appreciating asset. This is particularly pronounced among younger consumers who often have limited exposure to long-term financial thinking.
+## Problem
+People often spend money on products without fully considering the long-term financial implications. The core issue is a **lack of awareness about opportunity cost**: every dollar spent on a depreciating item is a dollar not invested in an appreciating asset. This challenge is particularly pronounced among younger consumers or those with limited exposure to long-term financial thinking.
+
+Evidence supports how widespread this gap in financial understanding is. A 2020 study by Vanguard found that more than half of Americans could not correctly estimate the average annual return of the stock market over the previous 20 years. Most respondents significantly underestimated it—placing it around 5% rather than the historical ~10% associated with the S&P 500. When people fundamentally misunderstand long-term returns, they are less likely to recognize the implicit cost of spending instead of investing. This gap in knowledge directly contributes to suboptimal financial decisions and makes opportunity-cost awareness tools increasingly necessary.
+
+---
 
 ## Solution
+The Opportunity Cost Engine offers a **streamlined workflow** that helps users visualize the trade-offs between consumption and investment:
 
-The tool presents a __streamlined workflow__:
+- **Product Selection:** Users choose a product from a predefined list.  
+- **Stock Mapping:** The system identifies the parent company and relevant stock ticker.  
+- **Modeling:** Historical stock performance and product depreciation are applied to simulate outcomes.  
+- **Comparison:** The program forecasts the potential returns of investing the money in the stock versus buying the product.  
+- **Summary:** A concise, readable summary highlights the **opportunity cost** and how the investment could have grown over the selected timeframe.  
 
-•Users choose a product from a predefined list.
+The interface prioritizes clarity, avoiding overwhelming financial jargon while providing actionable insights.
 
-•The system identifies the parent company and relevant stock ticker.
-
-•Historical stock performance and product depreciation models are applied.
-
-•The program forecasts how the purchase would fare over time versus the equivalent investment.
-
-• A short, readable summary compares the user’s chosen product to the potential financial return they passed up.
-
-The interface emphasizes clarity rather than overwhelming users with financial jargon.
+---
 
 ## Impact
+- **Financial Awareness:** Makes **opportunity cost** tangible, helping users think about long-term financial decisions.  
+- **Educational Tool:** Supports learning for students and adults alike, promoting better financial literacy.  
+- **Decision Support:** Helps users understand whether a purchase is “worth it” compared to investing.  
+- **Accessible:** Designed for simplicity, ensuring people with minimal investing experience can still benefit.
 
-By surfacing the often invisible cost of consumption, the tool encourages users to evaluate spending decisions with a more investment-oriented mindset. It offers a lightweight way to teach opportunity-cost thinking, helps users contextualize the long-term impact of small purchases, and can serve as an accessible financial literacy aid for both students and adults.
+---
 
 ## Challenges
-!!!!! - Use block quotes to insert code snippets? 
-
-
+- **Data Accuracy:** Mapping products to companies and keeping stock/product data up to date is nontrivial.  
+- **Depreciation Modeling:** Different product categories depreciate differently, which can affect accuracy.  
+- **Forecasting Uncertainty:** Stock performance predictions are inherently probabilistic and must be framed carefully.  
+- **User Interpretation:** Some users may focus only on monetary outcomes and ignore qualitative benefits of products.  
+- **Technical Integration:** Combining multiple forecasting strategies (CAGR, geometric Brownian motion, AI sentiment) requires robust architecture.
 
