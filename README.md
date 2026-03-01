@@ -1,7 +1,6 @@
-# wfs-hackathon-RAAS
-Authors: Amogh Naik Gaunekar, Alan Siby, Rakhshethan Subenthiran, Shane Sebastian
 # Opportunity Cost Engine
-# Category 2: Financial Inclusion
+(Category 2: Financial Inclusion)
+### Authors: Amogh Naik Gaunekar, Alan Siby, Rakhshethan Subenthiran, Shane Sebastian
 
 ## Problem
 People often spend money on products without fully considering the long-term financial implications. The core issue is a **lack of awareness about opportunity cost**: every dollar spent on a depreciating item is a dollar not invested in an appreciating asset. This challenge is particularly pronounced among younger consumers or those with limited exposure to long-term financial thinking.
