@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', () => {
         document.getElementById('main-wrapper').classList.add('show-content');
         document.body.style.overflow = 'auto'; // Re-enable scrolling
         setTimeout(() => document.getElementById('splash').remove(), 1000);
-    }, 2500);
+    }, 1);
 });
 
 // --- GLOBAL ELEMENTS ---
@@ -39,6 +39,10 @@ companyInput.addEventListener('input', function() {
     }
 });
 
+
+
+
+
 // --- SUBMISSION & CALCULATION ---
 document.getElementById('calcForm').onsubmit = async (e) => {
     e.preventDefault();
@@ -46,6 +50,8 @@ document.getElementById('calcForm').onsubmit = async (e) => {
         alert("Please select a company from the dropdown before running analytics.");
         return;
     }
+
+    
 
     const res = await fetch('/calculate', {
         method: 'POST',
@@ -74,39 +80,78 @@ document.getElementById('calcForm').onsubmit = async (e) => {
     document.getElementById('vText').innerText = data.verdict;
     document.getElementById('vBox').classList.remove('d-none');
 
-    // --- CHART UPDATE ---
+    document.getElementById('extraText').innerText = data.full_context;
+    document.getElementById('extraBox').classList.remove('d-none');
+
+    const extraText = document.getElementById('extraText');
+    const extraBox = document.getElementById('extraBox');
+    
+    if (data.full_context && data.full_context !== "") {
+        extraText.innerText = data.full_context;
+        extraBox.classList.remove('d-none');
+    } else {
+        extraBox.classList.add('d-none'); // optional fallback
+    }
+
+
+// --- CHART UPDATE ---
     const ctx = document.getElementById('mainChart').getContext('2d');
     if (chart) chart.destroy();
+    document.getElementById('chartPlaceholder').style.display = 'none';
+
+    setTimeout(() => {
+        chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: data.labels,
+                datasets: [
+                    { 
+                        label: 'Invested Capital (£)', 
+                        data: data.equity_values, 
+                        borderColor: '#007aff', 
+                        backgroundColor: 'rgba(0, 122, 255, 0.1)', 
+                        fill: true, 
+                        tension: 0.3 
+                    },
+                    { 
+                        label: 'Physical Asset Value (£)', 
+                        data: data.asset_values, 
+                        borderColor: '#dc3545', 
+                        borderDash: [5, 5], 
+                        tension: 0.1 
+                    }
+                ]
+            },
+            options: { 
+                responsive: true,
+                plugins: { legend: { labels: { color: '#8e96a3', font: { weight: '600' } } } },
+                scales: { 
+                    y: { ticks: { color: '#8e96a3' }, grid: { color: 'rgba(255,255,255,0.05)' } }, 
+                    x: { 
+                        ticks: { 
+                            color: '#8e96a3', // FIX: Removed the invalid curly braces here
+                            callback: function(val, index) {
+                                let rawlabel = this.getLabelForValue(val);
+                                if (!rawlabel) return "";
+
+                                let num = parseFloat(rawlabel.replace('Yr', ''));
+                                let yrs = Math.floor(num);
+                                let mos = Math.round((num-yrs) * 12);
+
+                                let label = "";
+                                // FIX: Updated to spell out "Years" and "Months" with plurals
+                                if (yrs > 0) label += `${yrs} yr${yrs > 1 ? 's' : ''}`;
+                                if (mos > 0) label += (yrs > 0 ? " " : "") + `${mos} mo${mos > 1 ? 's' : ''}`;
+
+                                return label || "Start";
+                            }
+                        },
+                        grid: { display: false } // FIX: Moved grid outside of the ticks block
+                    } 
+                } 
+            }
+        });
+},5);
+
     
-    chart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: data.labels,
-            datasets: [
-                { 
-                    label: 'Invested Capital (£)', 
-                    data: data.equity_values, 
-                    borderColor: '#007aff', 
-                    backgroundColor: 'rgba(0, 122, 255, 0.1)', 
-                    fill: true, 
-                    tension: 0.3 
-                },
-                { 
-                    label: 'Physical Asset Value (£)', 
-                    data: data.asset_values, 
-                    borderColor: '#dc3545', 
-                    borderDash: [5, 5], 
-                    tension: 0.1 
-                }
-            ]
-        },
-        options: { 
-            responsive: true,
-            plugins: { legend: { labels: { color: '#8e96a3', font: { weight: '600' } } } },
-            scales: { 
-                y: { ticks: { color: '#8e96a3' }, grid: { color: 'rgba(255,255,255,0.05)' } }, 
-                x: { ticks: { color: '#8e96a3' }, grid: { display: false } } 
-            } 
-        }
-    });
 };

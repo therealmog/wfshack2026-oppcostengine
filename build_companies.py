@@ -3,40 +3,7 @@ import csv
 import json
 import concurrent.futures
 import codecs
-
-# This dictionary maps Tickers to recognisable consumer products
-# It enriches the names so users can search by the product they actually bought.
-PRODUCT_MAP = {
-    "AAPL": "iPhone, iPad, Mac, AirPods",
-    "MSFT": "Xbox, Surface, Windows",
-    "SONY": "PlayStation, Bravia TVs, Headphones",
-    "AMZN": "Prime, Kindle, Echo/Alexa",
-    "GOOGL": "Android, Pixel, YouTube",
-    "NFLX": "Streaming Subscription",
-    "TSLA": "Model 3, Model Y, Solar",
-    "NKE": "Trainers, Jordans, Activewear",
-    "SBUX": "Coffee, Frappuccino",
-    "MCD": "Big Mac, Fast Food",
-    "TSCO.L": "Groceries, Clubcard",
-    "SBRY.L": "Groceries, Argos",
-    "DGE.L": "Guinness, Smirnoff, Tanqueray",
-    "ULVR.L": "Dove, Ben & Jerry's, Magnum",
-    "RR.L": "Jet Engines, Luxury Cars",
-    "VOD.L": "Mobile Contract, Broadband",
-    "META": "Instagram, WhatsApp, Quest VR",
-    "SPOT": "Music Subscription",
-    "DIS": "Disney+, Marvel, Star Wars",
-    "NVDA": "Graphics Cards, RTX, AI Tech",
-    "NXT.L": "Clothing, Home Decor",
-    "MKS.L": "Foodhall, Quality Clothing",
-    "EZJ.L": "Flights, Holidays",
-    "RYA.I": "Cheap Flights",
-    "BMW.DE": "1 Series, 3 Series, Mini",
-    "VOW3.DE": "VW, Audi, Porsche",
-    "LULU": "Yoga Pants, Activewear",
-    "EA": "FC 24, FIFA, Sims",
-    "TTWO": "GTA V, Red Dead Redemption"
-}
+from yfinance import Ticker
 
 def fetch_sp500():
     url = "https://raw.githubusercontent.com/datasets/s-and-p-500-companies/master/data/constituents.csv"
@@ -73,12 +40,17 @@ def generate():
     for co in all_companies:
         name = co['name']
         ticker = co['ticker']
+        try:
+            sector = Ticker(ticker).info["sector"]
+        except:
+            sector = ""
+
+        news = ticker.news
+        has_news = True
+        if not news:
+            has_news = False
         
-        # Enrich the name if we have products in our map
-        if ticker in PRODUCT_MAP:
-            name = f"{name} ({PRODUCT_MAP[ticker]})"
-        
-        final_db.append({"name": name, "ticker": ticker})
+        final_db.append({"name": name, "ticker": ticker,"sector":sector, "has_news": has_news})
 
     # Sort alphabetically for the UI
     final_db = sorted(final_db, key=lambda x: x['name'])
