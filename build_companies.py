@@ -3,7 +3,8 @@ import csv
 import json
 import concurrent.futures
 import codecs
-from yfinance import Ticker
+import os
+import yfinance as yf
 
 def fetch_sp500():
     url = "https://raw.githubusercontent.com/datasets/s-and-p-500-companies/master/data/constituents.csv"
@@ -11,10 +12,10 @@ def fetch_sp500():
         response = urllib.request.urlopen(url, timeout=10)
         reader = csv.DictReader(codecs.iterdecode(response, 'utf-8'))
         return [{"name": row['Security'], "ticker": row['Symbol']} for row in reader]
-    except: return []
+    except: 
+        return []
 
 def fetch_ftse100():
-    # Since scraping FTSE is flaky, we use a robust hardcoded list of the top 50 UK consumer brands
     return [
         {"name": "Tesco", "ticker": "TSCO.L"}, {"name": "Sainsbury's", "ticker": "SBRY.L"},
         {"name": "Diageo", "ticker": "DGE.L"}, {"name": "Unilever", "ticker": "ULVR.L"},
@@ -28,37 +29,69 @@ def fetch_ftse100():
         {"name": "BT Group", "ticker": "BT-A.L"}, {"name": "Greggs", "ticker": "GRG.L"}
     ]
 
-def generate():
-    print("Generating your Gold Catalogue...")
+def process_company(co):
+    name = co['name']
+    ticker = co['ticker']
+    # Default state ensures ALL keys always exist
+    result = {"name": name, "ticker": ticker, "sector": "unclassified", "has_news": False}
     
+    try:
+        yt = yf.Ticker(ticker)
+        
+        # 1. Fetch Sector and force lowercase with dashes
+        try:
+            raw_sector = yt.info.get("sector", "")
+            if raw_sector:
+                # "Consumer Cyclical" -> "consumer-cyclical"
+                result["sector"] = str(raw_sector).lower().replace(" ", "-")
+        except Exception:
+            pass 
+            
+        # 2. Fetch News and boolean flag
+        try:
+            news = yt.news
+            if news and len(news) > 0:
+                result["has_news"] = True
+        except Exception:
+            pass 
+            
+    except Exception as e:
+        print(f"Skipping {ticker} data pull: {e}")
+        
+    return result
+
+def generate():
+    print("Fetching base lists...")
     with concurrent.futures.ThreadPoolExecutor() as executor:
         f1 = executor.submit(fetch_sp500)
         f2 = executor.submit(fetch_ftse100)
         all_companies = f1.result() + f2.result()
 
     final_db = []
-    for co in all_companies:
-        name = co['name']
-        ticker = co['ticker']
-        try:
-            sector = Ticker(ticker).info["sector"]
-        except:
-            sector = ""
+    total = len(all_companies)
+    print(f"Enhancing {total} companies via Yahoo API in parallel. Please wait...")
 
-        news = ticker.news
-        has_news = True
-        if not news:
-            has_news = False
+    # Using 10 workers for stability to avoid rate limits
+    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+        futures = {executor.submit(process_company, co): co for co in all_companies}
         
-        final_db.append({"name": name, "ticker": ticker,"sector":sector, "has_news": has_news})
+        for count, future in enumerate(concurrent.futures.as_completed(futures), 1):
+            try:
+                final_db.append(future.result())
+                if count % 50 == 0:
+                    print(f"Progress: {count}/{total} processed...")
+            except Exception as e:
+                print(f"Thread failed: {e}")
 
     # Sort alphabetically for the UI
     final_db = sorted(final_db, key=lambda x: x['name'])
 
+    # Write the brand new file
+    print("Writing cleanly formatted JSON to disk...")
     with open('companies.json', 'w', encoding='utf-8') as f:
         json.dump(final_db, f, indent=4)
-    
-    print(f"Done! Created companies.json with {len(final_db)} entries.")
+        
+    print("Complete! Check your folder for companies.json.")
 
 if __name__ == "__main__":
     generate()

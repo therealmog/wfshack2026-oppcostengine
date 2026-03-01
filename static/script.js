@@ -1,3 +1,13 @@
+// --- GLOBAL ELEMENTS ---
+const companyInput = document.getElementById('companyInput');
+const tickerInput = document.getElementById('ticker');
+const yearsInput = document.getElementById('years');
+let chart = null;
+
+/*const sectorSelect = document.getElementById('sectorSelect');
+const similarBox = document.getElementById('similarBox');
+const similarResults = document.getElementById('similarResults'); */
+
 // --- INTRO & SPLASH REVEAL ---
 window.addEventListener('DOMContentLoaded', () => {
     // Initialise Tooltips
@@ -11,33 +21,103 @@ window.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = 'auto'; // Re-enable scrolling
         setTimeout(() => document.getElementById('splash').remove(), 1000);
     }, 1);
+
+    /*// Load sectors dynamically
+    fetch('/sectors')
+        .then(res => res.json())
+        .then(data => {
+            data.forEach(sec => {
+                const opt = document.createElement('option');
+                opt.value = sec;
+                opt.textContent = sec;
+                sectorSelect.appendChild(opt);
+            });
+    });*/
+
 });
 
-// --- GLOBAL ELEMENTS ---
-const companyInput = document.getElementById('companyInput');
-const tickerInput = document.getElementById('ticker');
-const yearsInput = document.getElementById('years');
-let chart = null;
+/*sectorSelect.addEventListener('change', async function() {
+
+    if (!this.value) {
+        similarBox.classList.add('d-none');
+        return;
+    }
+
+    const res = await fetch('/similar_trades', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            sector: this.value,
+            price: parseFloat(document.getElementById('price').value),
+            years: parseFloat(yearsInput.value)
+        })
+    });
+
+    const trades = await res.json();
+
+    if (!trades.length) return;
+
+    similarResults.innerHTML = "";
+
+    trades.forEach(trade => {
+        const div = document.createElement('div');
+        div.classList.add('mb-3');
+
+        div.innerHTML = `
+            <strong>${trade.ticker}</strong><br>
+            Free Milestone: ${trade.milestone}<br>
+            Opportunity Cost: £${trade.profit.toLocaleString()}<br>
+            Final Value: £${trade.final_value.toLocaleString()}
+        `;
+
+        similarResults.appendChild(div);
+    });
+
+    similarBox.classList.remove('d-none');
+}); */
 
 // --- INPUT LOGIC ---
 yearsInput.oninput = () => document.getElementById('yrDisp').innerText = `${yearsInput.value} Years`;
 
-companyInput.addEventListener('input', function() {
+function validateAISelection() {
     const options = document.querySelectorAll('#companyList option');
+    const currentModel = document.getElementById('modelType').value;
+    const currentCompany = companyInput.value;
     let found = false;
+
+    if (!currentCompany) return; 
+
     for (let opt of options) {
-        if (opt.value === this.value) {
+        if (opt.value === currentCompany) {
+            const hasNews = opt.getAttribute('data-has-news') === 'true';
+            
+            if (currentModel === 'NB_AI' && !hasNews) {
+                companyInput.setCustomValidity("Invalid selection: This company has no recent news articles required for the AI Prediction model.");
+                companyInput.reportValidity(); 
+                tickerInput.value = ""; 
+                return false;
+            }
+
             tickerInput.value = opt.getAttribute('data-ticker');
-            this.setCustomValidity("");
+            companyInput.setCustomValidity(""); 
             found = true;
             break;
         }
     }
+    
     if (!found) {
         tickerInput.value = "";
-        this.setCustomValidity("Please select a valid company from the list.");
+        companyInput.setCustomValidity("Please select a valid company from the list.");
+        companyInput.reportValidity();
+        return false;
     }
-});
+    
+    return true;
+}
+
+// Attach the validation to both the company text box AND the model dropdown
+companyInput.addEventListener('input', validateAISelection);
+document.getElementById('modelType').addEventListener('change', validateAISelection);
 
 
 
@@ -124,8 +204,10 @@ document.getElementById('calcForm').onsubmit = async (e) => {
             },
             options: { 
                 responsive: true,
+                maintainAspectRatio: false, // <--- ADD THIS LINE
                 plugins: { legend: { labels: { color: '#8e96a3', font: { weight: '600' } } } },
                 scales: { 
+                // ... rest of your code ...
                     y: { ticks: { color: '#8e96a3' }, grid: { color: 'rgba(255,255,255,0.05)' } }, 
                     x: { 
                         ticks: { 

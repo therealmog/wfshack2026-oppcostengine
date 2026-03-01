@@ -1,6 +1,6 @@
 {
     "products_positive":["Buying this {product} misses out on {profit} in gains over {years} years. Investing this cash instead could be more worth it.",
-               "Purchasing a {product} might not worth it; you could gain {profit} on top of your investment over {years} years instead.",
+               "Purchasing a {product} might not be worth it; you could gain {profit} on top of your investment over {years} years instead.",
                "Investing in {company_name} could obtain {profit} profit over {years} years.",
                "Hold on, investing in {company_name} could be beneficial - you could gain {profit} profit over {years} years.",
                 "Buying this {product} would mean forgoing approximately {profit} in potential gains over {years} years.",

@@ -1,4 +1,4 @@
- #################################################
+#################################################
 #################################################
 #------PROPERTY OF RAASclart PRODUCTIONS--------#
 #################################################
@@ -13,9 +13,6 @@ from random import choice
 import numpy as np
 from sklearn.linear_model import LinearRegression
 from textblob import TextBlob
-import math
-from scipy.stats import norm
-import pandas as pd
 import numpy as np
 import yfinance as yf
 
@@ -50,6 +47,23 @@ def fetch_financial_data(ticker_symbol):
    except Exception:
        return {"return": 0.08, "dividend": 0.01}
 
+# def get_sector_map():
+#     """
+#     Builds a {sector: [tickers]} dictionary from COMPANY_DB
+#     """
+#     sector_map = {}
+#     for co in COMPANY_DB:
+#         try:
+#             ticker = yf.Ticker(co["ticker"])
+#             sector = ticker.info.get("sector", "Other")
+#             if sector not in sector_map:
+#                 sector_map[sector] = []
+#             sector_map[sector].append(co["ticker"])
+#         except Exception:
+#             continue
+#     return sector_map
+
+
 def GBM_model(ticker_symbol):
     try:
         ticker = yf.Ticker(ticker_symbol)
@@ -70,19 +84,19 @@ def GBM_model(ticker_symbol):
 
 
     
-def run_gbm_simulation(price, years, mu, sigma, is_subscription, n_sims=100):
+def run_gbm_simulation(price, years, mu, sigma, is_subscription, total_steps, n_sims):
     """
     Core GBM Engine: Generates stochastic paths using Monte Carlo.
     Returns: (median_path, upper_path, lower_path)
     """
     # Create matrix: Rows = Simulations, Cols = Years
-    paths = np.zeros((n_sims, years + 1))
+    paths = np.zeros((n_sims, total_steps + 1))
     
     # Starting value
     initial_val = price if not is_subscription else (price * 12)
     paths[:, 0] = initial_val
 
-    for t in range(1, years + 1):
+    for t in range(1, total_steps + 1):
         # Generate random shocks for all sims at once
         Z = np.random.standard_normal(n_sims)
         
@@ -135,6 +149,10 @@ def get_ai_growth_rate(ticker_symbol):
 def index():
     return render_template('index.html', companies=COMPANY_DB)
 
+@app.route('/learn')
+def learn():
+    return render_template('learn.html')
+
 @app.route('/calculate', methods=['POST'])
 def calculate():
     data = request.json
@@ -171,15 +189,23 @@ def calculate():
 
     if model_type == 'GBM':
         with concurrent.futures.ThreadPoolExecutor() as executor:
-         future = executor.submit(GBM_model, ticker)
-         stat_data = future.result()
-        # ONLY runs if GBM is selected
+            future = executor.submit(GBM_model, ticker)
+            stat_data = future.result()
+            
         mu = stat_data.get('mu', 0.08)
         sigma = stat_data.get('sigma', 0.15)
         
         equity_values, upper_equity, lower_equity = run_gbm_simulation(
-            price, years, mu, sigma, is_subscription
+            price, years, mu, sigma, is_subscription, total_steps, 100 
         )
+        
+        # --- FIX: Generate the missing Labels and Asset Values for GBM ---
+        curr_asset = price if not is_subscription else 0
+        for i in range(total_steps + 1):
+            current_time = i * step_size
+            labels.append(f"Yr {current_time}")
+            asset_values.append(round(curr_asset, 2))
+            curr_asset *= (0.8 ** step_size) # Apply 20% annual depreciation
 
     elif model_type == "NB_AI":
         # Uses your Regression + Sentiment logic
@@ -333,6 +359,50 @@ def get_verdict(isPositive, isProduct):
             return choice(verdictsDict["subscriptions_positive"])
         case(False,False):
             return choice(verdictsDict["subscriptions_negative"])
+
+# @app.route('/similar_trades', methods=['POST'])
+# def similar_trades():
+#     data = request.json
+#     sector = data.get("sector")
+#     price = float(data.get("price", 0))
+#     years = float(data.get("years", 5))
+
+#     if not sector:
+#         return jsonify([])
+
+#     sector_map = get_sector_map()
+#     tickers = sector_map.get(sector, [])[:10]  # limit to avoid API spam
+
+#     results = []
+
+#     for ticker in tickers:
+#         fin = fetch_financial_data(ticker)
+#         growth = fin.get("return", 0.08) + fin.get("dividend", 0.01)
+
+#         final_val = price * ((1 + growth) ** years)
+#         profit = final_val - price
+
+#         milestone = "N/A"
+#         if final_val >= price * 2:
+#             milestone = f"{round(np.log(2)/np.log(1+growth),1)} yrs"
+
+#         results.append({
+#             "ticker": ticker,
+#             "final_value": round(final_val,2),
+#             "profit": round(profit,2),
+#             "milestone": milestone
+#         })
+
+#     # Sort by highest final value
+#     results = sorted(results, key=lambda x: x["final_value"], reverse=True)[:3]
+
+#     return jsonify(results)
+
+"""@app.route('/sectors')
+def sectors():
+    sector_map = get_sector_map()
+    return jsonify(list(sector_map.keys()))"""
+
 
 
 if __name__ == '__main__':

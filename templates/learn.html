@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn More</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+
+    <!-- Consistent Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1 {
+            font-weight: 700;
+        }
+
+        h2 {
+            font-weight: 600;
+            margin-top: 2rem;
+        }
+
+        h5 {
+            font-weight: 600;
+            margin-top: 1.5rem;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            opacity: 0.8;
+        }
+        
+        :root { --bg: #0b0e11; --card: #151921; --blue: #007aff; --border: #2c333d; }
+        body { background: var(--bg); color: #f8f9fa; font-family: 'Inter', sans-serif;}
+    </style>
+</head>
+
+<body class="bg-dark text-light">
+
+    <div class="container py-5">
+
+        <!-- Back Arrow -->
+        <a href="/" class="back-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+            </svg>
+            Back
+        </a>
+
+        <!-- Title -->
+        <h1 class="mb-4">Learn More</h1>
+
+        <p>
+            This website helps you understand the hidden financial trade-offs behind everyday purchases. 
+            Instead of just buying a product, you can see what would have happened if you invested the same amount 
+            of money in the company that makes it. Our goal is to make financial thinking simple, clear, and accessible to everyone.
+        </p>
+
+        <p>
+            The tool compares how much a product will gain or lose value over time with how much the same money 
+            could have grown if you had invested it instead. This helps you understand the opportunity cost — 
+            the value of the choice you didn't make. 
+        </p>
+
+        <hr class="my-5">
+
+        <h2>Key Concepts Explained</h2>
+
+        <h5>Opportunity Cost</h5>
+        <p>
+            Opportunity cost means the benefits you miss out on when choosing one option over another. 
+            For example, if you spend £500 on a phone, the opportunity cost is what that £500 could have earned 
+            if you had invested it instead.
+        </p>
+
+        <h5>Investment Ticker</h5>
+        <p>
+            A ticker is simply a short code used to identify a company's stock. 
+            For example, AAPL represents Apple.
+        </p>
+
+        <h5>Prediction Model</h5>
+        <p>
+            A prediction model is a method used to estimate how an investment might perform in the future. 
+            We use three beginner-friendly models to help show how your money could grow under different conditions.
+        </p>
+
+        <hr class="my-5">
+
+        <h2>Our Three Forecasting Strategies</h2>
+
+        <h5>1. CAGR (Compound Annual Growth Rate)</h5>
+        <p>
+            This strategy looks at how much the stock has grown per year on average. 
+            It's simple and helps you see steady long-term growth.
+        </p>
+
+        <h5>2. Geometric Brownian Motion</h5>
+        <p>
+            This model adds randomness to reflect how prices move up and down over time. 
+            It’s useful for showing a more realistic (but still simplified) picture of uncertainty in markets.
+        </p>
+
+        <h5>3. News Sentiment Model</h5>
+        <p>
+            This method uses the tone of recent news to estimate whether a stock might behave positively or negatively. 
+            If news is mostly positive, the model leans toward better performance, and vice versa.
+        </p>
+
+    </div>
+
+</body>
+</html>

@@ -1,2062 +1,3140 @@
 [
     {
         "name": "3M",
-        "ticker": "MMM"
+        "ticker": "MMM",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "A. O. Smith",
-        "ticker": "AOS"
+        "ticker": "AOS",
+        "sector": "industrials",
+        "has_news": true
     },
     {
         "name": "AES Corporation",
-        "ticker": "AES"
+        "ticker": "AES",
+        "sector": "utilities",
+        "has_news": true
     },
     {
         "name": "APA Corporation",
-        "ticker": "APA"
+        "ticker": "APA",
+        "sector": "energy",
+        "has_news": true
     },
     {
         "name": "AT&T",
-        "ticker": "T"
+        "ticker": "T",
+        "sector": "communication-services",
+        "has_news": true
     },
     {
         "name": "AbbVie",
-        "ticker": "ABBV"
+        "ticker": "ABBV",
+        "sector": "healthcare",
+        "has_news": true
     },
     {
         "name": "Abbott Laboratories",
-        "ticker": "ABT"
+        "ticker": "ABT",
+        "sector": "healthcare",
+        "has_news": true
     },
     {
         "name": "Accenture",
-        "ticker": "ACN"
+        "ticker": "ACN",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "Adobe Inc.",
-        "ticker": "ADBE"
+        "ticker": "ADBE",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "Advanced Micro Devices",
-        "ticker": "AMD"
+        "ticker": "AMD",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "Aflac",
-        "ticker": "AFL"
+        "ticker": "AFL",
+        "sector": "financial-services",
+        "has_news": true
     },
     {
         "name": "Agilent Technologies",
-        "ticker": "A"
+        "ticker": "A",
+        "sector": "healthcare",
+        "has_news": true
     },
     {
         "name": "Air Products",
-        "ticker": "APD"
+        "ticker": "APD",
+        "sector": "basic-materials",
+        "has_news": true
     },
     {
         "name": "Airbnb",
-        "ticker": "ABNB"
+        "ticker": "ABNB",
+        "sector": "consumer-cyclical",
+        "has_news": true
     },
     {
         "name": "Akamai Technologies",
-        "ticker": "AKAM"
+        "ticker": "AKAM",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "Albemarle Corporation",
-        "ticker": "ALB"
+        "ticker": "ALB",
+        "sector": "basic-materials",
+        "has_news": true
     },
     {
         "name": "Alexandria Real Estate Equities",
-        "ticker": "ARE"
+        "ticker": "ARE",
+        "sector": "real-estate",
+        "has_news": true
     },
     {
         "name": "Align Technology",
-        "ticker": "ALGN"
+        "ticker": "ALGN",
+        "sector": "healthcare",
+        "has_news": true
     },
     {
         "name": "Allegion",
-        "ticker": "ALLE"
+        "ticker": "ALLE",
+        "sector": "industrials",
+        "has_news": true
     },
     {
         "name": "Alliant Energy",
-        "ticker": "LNT"
+        "ticker": "LNT",
+        "sector": "utilities",
+        "has_news": true
     },
     {
         "name": "Allstate",
-        "ticker": "ALL"
+        "ticker": "ALL",
+        "sector": "financial-services",
+        "has_news": true
     },
     {
         "name": "Alphabet Inc. (Class A)",
-        "ticker": "GOOGL"
+        "ticker": "GOOGL",
+        "sector": "communication-services",
+        "has_news": true
     },
     {
         "name": "Alphabet Inc. (Class C)",
-        "ticker": "GOOG"
+        "ticker": "GOOG",
+        "sector": "communication-services",
+        "has_news": true
     },
     {
         "name": "Altria",
-        "ticker": "MO"
+        "ticker": "MO",
+        "sector": "consumer-defensive",
+        "has_news": true
     },
     {
         "name": "Amazon",
-        "ticker": "AMZN"
+        "ticker": "AMZN",
+        "sector": "consumer-cyclical",
+        "has_news": true
     },
     {
         "name": "Amcor",
-        "ticker": "AMCR"
+        "ticker": "AMCR",
+        "sector": "consumer-cyclical",
+        "has_news": true
     },
     {
         "name": "Ameren",
-        "ticker": "AEE"
+        "ticker": "AEE",
+        "sector": "utilities",
+        "has_news": true
     },
     {
         "name": "American Electric Power",
-        "ticker": "AEP"
+        "ticker": "AEP",
+        "sector": "utilities",
+        "has_news": true
     },
     {
         "name": "American Express",
-        "ticker": "AXP"
+        "ticker": "AXP",
+        "sector": "financial-services",
+        "has_news": true
     },
     {
         "name": "American International Group",
-        "ticker": "AIG"
+        "ticker": "AIG",
+        "sector": "financial-services",
+        "has_news": true
     },
     {
         "name": "American Tower",
-        "ticker": "AMT"
+        "ticker": "AMT",
+        "sector": "real-estate",
+        "has_news": true
     },
     {
         "name": "American Water Works",
-        "ticker": "AWK"
+        "ticker": "AWK",
+        "sector": "utilities",
+        "has_news": true
     },
     {
         "name": "Ameriprise Financial",
-        "ticker": "AMP"
+        "ticker": "AMP",
+        "sector": "financial-services",
+        "has_news": true
     },
     {
         "name": "Ametek",
-        "ticker": "AME"
+        "ticker": "AME",
+        "sector": "industrials",
+        "has_news": true
     },
     {
         "name": "Amgen",
-        "ticker": "AMGN"
+        "ticker": "AMGN",
+        "sector": "healthcare",
+        "has_news": true
     },
     {
         "name": "Amphenol",
-        "ticker": "APH"
+        "ticker": "APH",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "Analog Devices",
-        "ticker": "ADI"
+        "ticker": "ADI",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "Aon plc",
-        "ticker": "AON"
+        "ticker": "AON",
+        "sector": "financial-services",
+        "has_news": true
     },
     {
         "name": "Apollo Global Management",
-        "ticker": "APO"
+        "ticker": "APO",
+        "sector": "financial-services",
+        "has_news": true
     },
     {
         "name": "Apple Inc.",
-        "ticker": "AAPL"
+        "ticker": "AAPL",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "Applied Materials",
-        "ticker": "AMAT"
+        "ticker": "AMAT",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "Aptiv",
-        "ticker": "APTV"
+        "ticker": "APTV",
+        "sector": "consumer-cyclical",
+        "has_news": true
     },
     {
         "name": "Arch Capital Group",
-        "ticker": "ACGL"
+        "ticker": "ACGL",
+        "sector": "financial-services",
+        "has_news": true
     },
     {
         "name": "Archer Daniels Midland",
-        "ticker": "ADM"
+        "ticker": "ADM",
+        "sector": "consumer-defensive",
+        "has_news": true
     },
     {
         "name": "Arista Networks",
-        "ticker": "ANET"
+        "ticker": "ANET",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "Arthur J. Gallagher & Co.",
-        "ticker": "AJG"
+        "ticker": "AJG",
+        "sector": "financial-services",
+        "has_news": true
     },
     {
         "name": "Assurant",
-        "ticker": "AIZ"
+        "ticker": "AIZ",
+        "sector": "financial-services",
+        "has_news": true
     },
     {
         "name": "AstraZeneca",
-        "ticker": "AZN.L"
+        "ticker": "AZN.L",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Atmos Energy",
-        "ticker": "ATO"
+        "ticker": "ATO",
+        "sector": "utilities",
+        "has_news": true
     },
     {
         "name": "AutoZone",
-        "ticker": "AZO"
+        "ticker": "AZO",
+        "sector": "consumer-cyclical",
+        "has_news": true
     },
     {
         "name": "Autodesk",
-        "ticker": "ADSK"
+        "ticker": "ADSK",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "Automatic Data Processing",
-        "ticker": "ADP"
+        "ticker": "ADP",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "AvalonBay Communities",
-        "ticker": "AVB"
+        "ticker": "AVB",
+        "sector": "real-estate",
+        "has_news": true
     },
     {
         "name": "Avery Dennison",
-        "ticker": "AVY"
+        "ticker": "AVY",
+        "sector": "consumer-cyclical",
+        "has_news": true
     },
     {
         "name": "Axon Enterprise",
-        "ticker": "AXON"
+        "ticker": "AXON",
+        "sector": "industrials",
+        "has_news": true
     },
     {
         "name": "BNY Mellon",
-        "ticker": "BK"
+        "ticker": "BK",
+        "sector": "financial-services",
+        "has_news": true
     },
     {
-        "name": "BP plc",
-        "ticker": "BP.L"
+        "name": "BP",
+        "ticker": "BP.L",
+        "sector": "unclassified",
+        "has_news": false
+    },
+    {
+        "name": "BT Group",
+        "ticker": "BT-A.L",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "BXP, Inc.",
-        "ticker": "BXP"
+        "ticker": "BXP",
+        "sector": "real-estate",
+        "has_news": true
     },
     {
         "name": "Baker Hughes",
-        "ticker": "BKR"
+        "ticker": "BKR",
+        "sector": "energy",
+        "has_news": true
     },
     {
         "name": "Ball Corporation",
-        "ticker": "BALL"
+        "ticker": "BALL",
+        "sector": "consumer-cyclical",
+        "has_news": true
     },
     {
         "name": "Bank of America",
-        "ticker": "BAC"
+        "ticker": "BAC",
+        "sector": "financial-services",
+        "has_news": true
     },
     {
         "name": "Barclays",
-        "ticker": "BARC.L"
+        "ticker": "BARC.L",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Baxter International",
-        "ticker": "BAX"
+        "ticker": "BAX",
+        "sector": "healthcare",
+        "has_news": true
     },
     {
         "name": "Becton Dickinson",
-        "ticker": "BDX"
+        "ticker": "BDX",
+        "sector": "healthcare",
+        "has_news": true
     },
     {
         "name": "Berkshire Hathaway",
-        "ticker": "BRK.B"
+        "ticker": "BRK.B",
+        "sector": "unclassified",
+        "has_news": true
     },
     {
         "name": "Best Buy",
-        "ticker": "BBY"
+        "ticker": "BBY",
+        "sector": "consumer-cyclical",
+        "has_news": true
     },
     {
         "name": "Bio-Techne",
-        "ticker": "TECH"
+        "ticker": "TECH",
+        "sector": "healthcare",
+        "has_news": true
     },
     {
         "name": "Biogen",
-        "ticker": "BIIB"
+        "ticker": "BIIB",
+        "sector": "healthcare",
+        "has_news": true
     },
     {
         "name": "BlackRock",
-        "ticker": "BLK"
+        "ticker": "BLK",
+        "sector": "financial-services",
+        "has_news": true
     },
     {
         "name": "Blackstone Inc.",
-        "ticker": "BX"
+        "ticker": "BX",
+        "sector": "financial-services",
+        "has_news": true
     },
     {
         "name": "Block, Inc.",
-        "ticker": "XYZ"
+        "ticker": "XYZ",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "Boeing",
-        "ticker": "BA"
+        "ticker": "BA",
+        "sector": "industrials",
+        "has_news": true
     },
     {
         "name": "Booking Holdings",
-        "ticker": "BKNG"
+        "ticker": "BKNG",
+        "sector": "consumer-cyclical",
+        "has_news": true
     },
     {
         "name": "Boston Scientific",
-        "ticker": "BSX"
+        "ticker": "BSX",
+        "sector": "healthcare",
+        "has_news": true
     },
     {
         "name": "Bristol Myers Squibb",
-        "ticker": "BMY"
-    },
-    {
-        "name": "British American Tobacco",
-        "ticker": "BATS.L"
+        "ticker": "BMY",
+        "sector": "healthcare",
+        "has_news": true
     },
     {
         "name": "Broadcom",
-        "ticker": "AVGO"
+        "ticker": "AVGO",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "Broadridge Financial Solutions",
-        "ticker": "BR"
+        "ticker": "BR",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "Brown & Brown",
-        "ticker": "BRO"
+        "ticker": "BRO",
+        "sector": "financial-services",
+        "has_news": true
     },
     {
-        "name": "Brown Forman",
-        "ticker": "BF.B"
+        "name": "Brown\u2013Forman",
+        "ticker": "BF.B",
+        "sector": "unclassified",
+        "has_news": true
     },
     {
         "name": "Builders FirstSource",
-        "ticker": "BLDR"
+        "ticker": "BLDR",
+        "sector": "industrials",
+        "has_news": true
     },
     {
         "name": "Bunge Global",
-        "ticker": "BG"
+        "ticker": "BG",
+        "sector": "consumer-defensive",
+        "has_news": true
+    },
+    {
+        "name": "Burberry",
+        "ticker": "BRBY.L",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "C.H. Robinson",
-        "ticker": "CHRW"
+        "ticker": "CHRW",
+        "sector": "industrials",
+        "has_news": true
     },
     {
         "name": "CBRE Group",
-        "ticker": "CBRE"
+        "ticker": "CBRE",
+        "sector": "real-estate",
+        "has_news": true
     },
     {
         "name": "CDW Corporation",
-        "ticker": "CDW"
+        "ticker": "CDW",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "CF Industries",
-        "ticker": "CF"
+        "ticker": "CF",
+        "sector": "basic-materials",
+        "has_news": true
     },
     {
         "name": "CME Group",
-        "ticker": "CME"
+        "ticker": "CME",
+        "sector": "financial-services",
+        "has_news": true
     },
     {
         "name": "CMS Energy",
-        "ticker": "CMS"
+        "ticker": "CMS",
+        "sector": "utilities",
+        "has_news": true
     },
     {
         "name": "CSX Corporation",
-        "ticker": "CSX"
+        "ticker": "CSX",
+        "sector": "industrials",
+        "has_news": true
     },
     {
         "name": "CVS Health",
-        "ticker": "CVS"
+        "ticker": "CVS",
+        "sector": "healthcare",
+        "has_news": true
     },
     {
         "name": "Cadence Design Systems",
-        "ticker": "CDNS"
+        "ticker": "CDNS",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "Caesars Entertainment",
-        "ticker": "CZR"
+        "ticker": "CZR",
+        "sector": "consumer-cyclical",
+        "has_news": true
     },
     {
         "name": "Camden Property Trust",
-        "ticker": "CPT"
+        "ticker": "CPT",
+        "sector": "real-estate",
+        "has_news": true
     },
     {
-        "name": "Campbell's Company",
-        "ticker": "CPB"
+        "name": "Campbell's Company (The)",
+        "ticker": "CPB",
+        "sector": "consumer-defensive",
+        "has_news": true
     },
     {
         "name": "Capital One",
-        "ticker": "COF"
+        "ticker": "COF",
+        "sector": "financial-services",
+        "has_news": true
     },
     {
         "name": "CarMax",
-        "ticker": "KMX"
+        "ticker": "KMX",
+        "sector": "consumer-cyclical",
+        "has_news": true
     },
     {
         "name": "Cardinal Health",
-        "ticker": "CAH"
+        "ticker": "CAH",
+        "sector": "healthcare",
+        "has_news": true
     },
     {
         "name": "Carnival",
-        "ticker": "CCL"
+        "ticker": "CCL",
+        "sector": "consumer-cyclical",
+        "has_news": true
     },
     {
         "name": "Carrier Global",
-        "ticker": "CARR"
+        "ticker": "CARR",
+        "sector": "industrials",
+        "has_news": true
     },
     {
         "name": "Caterpillar Inc.",
-        "ticker": "CAT"
+        "ticker": "CAT",
+        "sector": "industrials",
+        "has_news": true
     },
     {
         "name": "Cboe Global Markets",
-        "ticker": "CBOE"
+        "ticker": "CBOE",
+        "sector": "financial-services",
+        "has_news": true
     },
     {
         "name": "Cencora",
-        "ticker": "COR"
+        "ticker": "COR",
+        "sector": "healthcare",
+        "has_news": true
     },
     {
         "name": "Centene Corporation",
-        "ticker": "CNC"
+        "ticker": "CNC",
+        "sector": "healthcare",
+        "has_news": true
     },
     {
         "name": "CenterPoint Energy",
-        "ticker": "CNP"
+        "ticker": "CNP",
+        "sector": "utilities",
+        "has_news": true
     },
     {
         "name": "Charles River Laboratories",
-        "ticker": "CRL"
+        "ticker": "CRL",
+        "sector": "healthcare",
+        "has_news": true
     },
     {
         "name": "Charles Schwab Corporation",
-        "ticker": "SCHW"
+        "ticker": "SCHW",
+        "sector": "financial-services",
+        "has_news": true
     },
     {
         "name": "Charter Communications",
-        "ticker": "CHTR"
+        "ticker": "CHTR",
+        "sector": "communication-services",
+        "has_news": true
     },
     {
         "name": "Chevron Corporation",
-        "ticker": "CVX"
+        "ticker": "CVX",
+        "sector": "energy",
+        "has_news": true
     },
     {
         "name": "Chipotle Mexican Grill",
-        "ticker": "CMG"
+        "ticker": "CMG",
+        "sector": "consumer-cyclical",
+        "has_news": true
     },
     {
         "name": "Chubb Limited",
-        "ticker": "CB"
+        "ticker": "CB",
+        "sector": "financial-services",
+        "has_news": true
     },
     {
         "name": "Church & Dwight",
-        "ticker": "CHD"
+        "ticker": "CHD",
+        "sector": "consumer-defensive",
+        "has_news": true
     },
     {
         "name": "Cigna",
-        "ticker": "CI"
+        "ticker": "CI",
+        "sector": "healthcare",
+        "has_news": true
     },
     {
         "name": "Cincinnati Financial",
-        "ticker": "CINF"
+        "ticker": "CINF",
+        "sector": "financial-services",
+        "has_news": true
     },
     {
         "name": "Cintas",
-        "ticker": "CTAS"
+        "ticker": "CTAS",
+        "sector": "industrials",
+        "has_news": true
     },
     {
         "name": "Cisco",
-        "ticker": "CSCO"
+        "ticker": "CSCO",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "Citigroup",
-        "ticker": "C"
+        "ticker": "C",
+        "sector": "financial-services",
+        "has_news": true
     },
     {
         "name": "Citizens Financial Group",
-        "ticker": "CFG"
+        "ticker": "CFG",
+        "sector": "financial-services",
+        "has_news": true
     },
     {
         "name": "Clorox",
-        "ticker": "CLX"
+        "ticker": "CLX",
+        "sector": "consumer-defensive",
+        "has_news": true
     },
     {
         "name": "CoStar Group",
-        "ticker": "CSGP"
+        "ticker": "CSGP",
+        "sector": "real-estate",
+        "has_news": true
     },
     {
-        "name": "Coca-Cola Company",
-        "ticker": "KO"
+        "name": "Coca-Cola Company (The)",
+        "ticker": "KO",
+        "sector": "consumer-defensive",
+        "has_news": true
     },
     {
         "name": "Cognizant",
-        "ticker": "CTSH"
+        "ticker": "CTSH",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "Coinbase",
-        "ticker": "COIN"
+        "ticker": "COIN",
+        "sector": "financial-services",
+        "has_news": true
     },
     {
         "name": "Colgate-Palmolive",
-        "ticker": "CL"
+        "ticker": "CL",
+        "sector": "consumer-defensive",
+        "has_news": true
     },
     {
         "name": "Comcast",
-        "ticker": "CMCSA"
+        "ticker": "CMCSA",
+        "sector": "communication-services",
+        "has_news": true
     },
     {
         "name": "Conagra Brands",
-        "ticker": "CAG"
+        "ticker": "CAG",
+        "sector": "consumer-defensive",
+        "has_news": true
     },
     {
         "name": "ConocoPhillips",
-        "ticker": "COP"
+        "ticker": "COP",
+        "sector": "energy",
+        "has_news": true
     },
     {
         "name": "Consolidated Edison",
-        "ticker": "ED"
+        "ticker": "ED",
+        "sector": "utilities",
+        "has_news": true
     },
     {
         "name": "Constellation Brands",
-        "ticker": "STZ"
+        "ticker": "STZ",
+        "sector": "consumer-defensive",
+        "has_news": true
     },
     {
         "name": "Constellation Energy",
-        "ticker": "CEG"
+        "ticker": "CEG",
+        "sector": "utilities",
+        "has_news": true
     },
     {
-        "name": "Cooper Companies",
-        "ticker": "COO"
+        "name": "Cooper Companies (The)",
+        "ticker": "COO",
+        "sector": "healthcare",
+        "has_news": true
     },
     {
         "name": "Copart",
-        "ticker": "CPRT"
+        "ticker": "CPRT",
+        "sector": "industrials",
+        "has_news": true
     },
     {
         "name": "Corning Inc.",
-        "ticker": "GLW"
+        "ticker": "GLW",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "Corpay",
-        "ticker": "CPAY"
+        "ticker": "CPAY",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "Corteva",
-        "ticker": "CTVA"
+        "ticker": "CTVA",
+        "sector": "basic-materials",
+        "has_news": true
     },
     {
         "name": "Costco",
-        "ticker": "COST"
+        "ticker": "COST",
+        "sector": "consumer-defensive",
+        "has_news": true
     },
     {
         "name": "Coterra",
-        "ticker": "CTRA"
+        "ticker": "CTRA",
+        "sector": "energy",
+        "has_news": true
     },
     {
         "name": "CrowdStrike",
-        "ticker": "CRWD"
+        "ticker": "CRWD",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "Crown Castle",
-        "ticker": "CCI"
+        "ticker": "CCI",
+        "sector": "real-estate",
+        "has_news": true
     },
     {
         "name": "Cummins",
-        "ticker": "CMI"
+        "ticker": "CMI",
+        "sector": "industrials",
+        "has_news": true
     },
     {
         "name": "D. R. Horton",
-        "ticker": "DHI"
+        "ticker": "DHI",
+        "sector": "consumer-cyclical",
+        "has_news": true
     },
     {
         "name": "DTE Energy",
-        "ticker": "DTE"
+        "ticker": "DTE",
+        "sector": "utilities",
+        "has_news": true
     },
     {
         "name": "DaVita",
-        "ticker": "DVA"
+        "ticker": "DVA",
+        "sector": "healthcare",
+        "has_news": true
     },
     {
         "name": "Danaher Corporation",
-        "ticker": "DHR"
+        "ticker": "DHR",
+        "sector": "healthcare",
+        "has_news": true
     },
     {
         "name": "Darden Restaurants",
-        "ticker": "DRI"
+        "ticker": "DRI",
+        "sector": "consumer-cyclical",
+        "has_news": true
     },
     {
         "name": "Datadog",
-        "ticker": "DDOG"
+        "ticker": "DDOG",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "Dayforce",
-        "ticker": "DAY"
+        "ticker": "DAY",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "Deckers Brands",
-        "ticker": "DECK"
+        "ticker": "DECK",
+        "sector": "consumer-cyclical",
+        "has_news": true
     },
     {
         "name": "Deere & Company",
-        "ticker": "DE"
+        "ticker": "DE",
+        "sector": "industrials",
+        "has_news": true
     },
     {
         "name": "Dell Technologies",
-        "ticker": "DELL"
+        "ticker": "DELL",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "Delta Air Lines",
-        "ticker": "DAL"
+        "ticker": "DAL",
+        "sector": "industrials",
+        "has_news": true
     },
     {
         "name": "Devon Energy",
-        "ticker": "DVN"
+        "ticker": "DVN",
+        "sector": "energy",
+        "has_news": true
     },
     {
         "name": "Dexcom",
-        "ticker": "DXCM"
+        "ticker": "DXCM",
+        "sector": "healthcare",
+        "has_news": true
     },
     {
         "name": "Diageo",
-        "ticker": "DGE.L"
+        "ticker": "DGE.L",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Diamondback Energy",
-        "ticker": "FANG"
+        "ticker": "FANG",
+        "sector": "energy",
+        "has_news": true
     },
     {
         "name": "Digital Realty",
-        "ticker": "DLR"
+        "ticker": "DLR",
+        "sector": "real-estate",
+        "has_news": true
     },
     {
         "name": "Dollar General",
-        "ticker": "DG"
+        "ticker": "DG",
+        "sector": "consumer-defensive",
+        "has_news": true
     },
     {
         "name": "Dollar Tree",
-        "ticker": "DLTR"
+        "ticker": "DLTR",
+        "sector": "consumer-defensive",
+        "has_news": true
     },
     {
         "name": "Dominion Energy",
-        "ticker": "D"
+        "ticker": "D",
+        "sector": "utilities",
+        "has_news": true
     },
     {
         "name": "Domino's",
-        "ticker": "DPZ"
+        "ticker": "DPZ",
+        "sector": "consumer-cyclical",
+        "has_news": true
     },
     {
         "name": "DoorDash",
-        "ticker": "DASH"
+        "ticker": "DASH",
+        "sector": "consumer-cyclical",
+        "has_news": true
     },
     {
         "name": "Dover Corporation",
-        "ticker": "DOV"
+        "ticker": "DOV",
+        "sector": "industrials",
+        "has_news": true
     },
     {
         "name": "Dow Inc.",
-        "ticker": "DOW"
+        "ticker": "DOW",
+        "sector": "basic-materials",
+        "has_news": true
     },
     {
         "name": "DuPont",
-        "ticker": "DD"
+        "ticker": "DD",
+        "sector": "basic-materials",
+        "has_news": true
     },
     {
         "name": "Duke Energy",
-        "ticker": "DUK"
+        "ticker": "DUK",
+        "sector": "utilities",
+        "has_news": true
     },
     {
         "name": "EOG Resources",
-        "ticker": "EOG"
+        "ticker": "EOG",
+        "sector": "energy",
+        "has_news": true
     },
     {
         "name": "EPAM Systems",
-        "ticker": "EPAM"
+        "ticker": "EPAM",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "EQT Corporation",
-        "ticker": "EQT"
+        "ticker": "EQT",
+        "sector": "energy",
+        "has_news": true
     },
     {
         "name": "Eastman Chemical Company",
-        "ticker": "EMN"
+        "ticker": "EMN",
+        "sector": "basic-materials",
+        "has_news": true
     },
     {
         "name": "Eaton Corporation",
-        "ticker": "ETN"
+        "ticker": "ETN",
+        "sector": "industrials",
+        "has_news": true
     },
     {
         "name": "Ecolab",
-        "ticker": "ECL"
+        "ticker": "ECL",
+        "sector": "basic-materials",
+        "has_news": true
     },
     {
         "name": "Edison International",
-        "ticker": "EIX"
+        "ticker": "EIX",
+        "sector": "utilities",
+        "has_news": true
     },
     {
         "name": "Edwards Lifesciences",
-        "ticker": "EW"
+        "ticker": "EW",
+        "sector": "healthcare",
+        "has_news": true
     },
     {
         "name": "Electronic Arts",
-        "ticker": "EA"
+        "ticker": "EA",
+        "sector": "communication-services",
+        "has_news": true
     },
     {
         "name": "Elevance Health",
-        "ticker": "ELV"
+        "ticker": "ELV",
+        "sector": "healthcare",
+        "has_news": true
     },
     {
         "name": "Emerson Electric",
-        "ticker": "EMR"
+        "ticker": "EMR",
+        "sector": "industrials",
+        "has_news": true
     },
     {
         "name": "Enphase Energy",
-        "ticker": "ENPH"
+        "ticker": "ENPH",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "Entergy",
-        "ticker": "ETR"
+        "ticker": "ETR",
+        "sector": "utilities",
+        "has_news": true
     },
     {
         "name": "Equifax",
-        "ticker": "EFX"
+        "ticker": "EFX",
+        "sector": "industrials",
+        "has_news": true
     },
     {
         "name": "Equinix",
-        "ticker": "EQIX"
+        "ticker": "EQIX",
+        "sector": "real-estate",
+        "has_news": true
     },
     {
         "name": "Equity Residential",
-        "ticker": "EQR"
+        "ticker": "EQR",
+        "sector": "real-estate",
+        "has_news": true
     },
     {
         "name": "Erie Indemnity",
-        "ticker": "ERIE"
+        "ticker": "ERIE",
+        "sector": "financial-services",
+        "has_news": true
     },
     {
         "name": "Essex Property Trust",
-        "ticker": "ESS"
+        "ticker": "ESS",
+        "sector": "real-estate",
+        "has_news": true
     },
     {
-        "name": "Este Lauder Companies",
-        "ticker": "EL"
+        "name": "Est\u00e9e Lauder Companies (The)",
+        "ticker": "EL",
+        "sector": "consumer-defensive",
+        "has_news": true
     },
     {
         "name": "Everest Group",
-        "ticker": "EG"
+        "ticker": "EG",
+        "sector": "financial-services",
+        "has_news": true
     },
     {
         "name": "Evergy",
-        "ticker": "EVRG"
+        "ticker": "EVRG",
+        "sector": "utilities",
+        "has_news": true
     },
     {
         "name": "Eversource Energy",
-        "ticker": "ES"
+        "ticker": "ES",
+        "sector": "utilities",
+        "has_news": true
     },
     {
         "name": "Exelon",
-        "ticker": "EXC"
+        "ticker": "EXC",
+        "sector": "utilities",
+        "has_news": true
     },
     {
         "name": "Expand Energy",
-        "ticker": "EXE"
+        "ticker": "EXE",
+        "sector": "energy",
+        "has_news": true
     },
     {
         "name": "Expedia Group",
-        "ticker": "EXPE"
+        "ticker": "EXPE",
+        "sector": "consumer-cyclical",
+        "has_news": true
     },
     {
         "name": "Expeditors International",
-        "ticker": "EXPD"
+        "ticker": "EXPD",
+        "sector": "industrials",
+        "has_news": true
     },
     {
         "name": "Extra Space Storage",
-        "ticker": "EXR"
+        "ticker": "EXR",
+        "sector": "real-estate",
+        "has_news": true
     },
     {
         "name": "ExxonMobil",
-        "ticker": "XOM"
+        "ticker": "XOM",
+        "sector": "energy",
+        "has_news": true
     },
     {
         "name": "F5, Inc.",
-        "ticker": "FFIV"
+        "ticker": "FFIV",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "FactSet",
-        "ticker": "FDS"
+        "ticker": "FDS",
+        "sector": "financial-services",
+        "has_news": true
     },
     {
         "name": "Fair Isaac",
-        "ticker": "FICO"
+        "ticker": "FICO",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "Fastenal",
-        "ticker": "FAST"
+        "ticker": "FAST",
+        "sector": "industrials",
+        "has_news": true
     },
     {
         "name": "FedEx",
-        "ticker": "FDX"
+        "ticker": "FDX",
+        "sector": "industrials",
+        "has_news": true
     },
     {
         "name": "Federal Realty Investment Trust",
-        "ticker": "FRT"
+        "ticker": "FRT",
+        "sector": "real-estate",
+        "has_news": true
     },
     {
         "name": "Fidelity National Information Services",
-        "ticker": "FIS"
+        "ticker": "FIS",
+        "sector": "technology",
+        "has_news": false
     },
     {
         "name": "Fifth Third Bancorp",
-        "ticker": "FITB"
+        "ticker": "FITB",
+        "sector": "financial-services",
+        "has_news": true
     },
     {
         "name": "First Solar",
-        "ticker": "FSLR"
+        "ticker": "FSLR",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "FirstEnergy",
-        "ticker": "FE"
+        "ticker": "FE",
+        "sector": "utilities",
+        "has_news": true
     },
     {
         "name": "Fiserv",
-        "ticker": "FI"
+        "ticker": "FI",
+        "sector": "unclassified",
+        "has_news": true
     },
     {
         "name": "Ford Motor Company",
-        "ticker": "F"
+        "ticker": "F",
+        "sector": "consumer-cyclical",
+        "has_news": true
     },
     {
         "name": "Fortinet",
-        "ticker": "FTNT"
+        "ticker": "FTNT",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "Fortive",
-        "ticker": "FTV"
+        "ticker": "FTV",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "Fox Corporation (Class A)",
-        "ticker": "FOXA"
+        "ticker": "FOXA",
+        "sector": "communication-services",
+        "has_news": true
     },
     {
         "name": "Fox Corporation (Class B)",
-        "ticker": "FOX"
+        "ticker": "FOX",
+        "sector": "communication-services",
+        "has_news": true
     },
     {
         "name": "Franklin Resources",
-        "ticker": "BEN"
+        "ticker": "BEN",
+        "sector": "financial-services",
+        "has_news": true
     },
     {
         "name": "Freeport-McMoRan",
-        "ticker": "FCX"
+        "ticker": "FCX",
+        "sector": "basic-materials",
+        "has_news": true
     },
     {
         "name": "GE Aerospace",
-        "ticker": "GE"
+        "ticker": "GE",
+        "sector": "industrials",
+        "has_news": true
     },
     {
         "name": "GE HealthCare",
-        "ticker": "GEHC"
+        "ticker": "GEHC",
+        "sector": "healthcare",
+        "has_news": true
     },
     {
         "name": "GE Vernova",
-        "ticker": "GEV"
-    },
-    {
-        "name": "GSK plc",
-        "ticker": "GSK.L"
+        "ticker": "GEV",
+        "sector": "industrials",
+        "has_news": true
     },
     {
         "name": "Garmin",
-        "ticker": "GRMN"
+        "ticker": "GRMN",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "Gartner",
-        "ticker": "IT"
+        "ticker": "IT",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "Gen Digital",
-        "ticker": "GEN"
+        "ticker": "GEN",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "Generac",
-        "ticker": "GNRC"
+        "ticker": "GNRC",
+        "sector": "industrials",
+        "has_news": true
     },
     {
         "name": "General Dynamics",
-        "ticker": "GD"
+        "ticker": "GD",
+        "sector": "industrials",
+        "has_news": true
     },
     {
         "name": "General Mills",
-        "ticker": "GIS"
+        "ticker": "GIS",
+        "sector": "consumer-defensive",
+        "has_news": true
     },
     {
         "name": "General Motors",
-        "ticker": "GM"
+        "ticker": "GM",
+        "sector": "consumer-cyclical",
+        "has_news": true
     },
     {
         "name": "Genuine Parts Company",
-        "ticker": "GPC"
+        "ticker": "GPC",
+        "sector": "consumer-cyclical",
+        "has_news": true
     },
     {
         "name": "Gilead Sciences",
-        "ticker": "GILD"
-    },
-    {
-        "name": "Glencore",
-        "ticker": "GLEN.L"
+        "ticker": "GILD",
+        "sector": "healthcare",
+        "has_news": true
     },
     {
         "name": "Global Payments",
-        "ticker": "GPN"
+        "ticker": "GPN",
+        "sector": "industrials",
+        "has_news": true
     },
     {
         "name": "Globe Life",
-        "ticker": "GL"
+        "ticker": "GL",
+        "sector": "financial-services",
+        "has_news": true
     },
     {
         "name": "GoDaddy",
-        "ticker": "GDDY"
+        "ticker": "GDDY",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "Goldman Sachs",
-        "ticker": "GS"
+        "ticker": "GS",
+        "sector": "financial-services",
+        "has_news": true
+    },
+    {
+        "name": "Greggs",
+        "ticker": "GRG.L",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "HCA Healthcare",
-        "ticker": "HCA"
+        "ticker": "HCA",
+        "sector": "healthcare",
+        "has_news": true
     },
     {
         "name": "HP Inc.",
-        "ticker": "HPQ"
+        "ticker": "HPQ",
+        "sector": "technology",
+        "has_news": true
     },
     {
-        "name": "HSBC Holdings",
-        "ticker": "HSBA.L"
+        "name": "HSBC",
+        "ticker": "HSBA.L",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Halliburton",
-        "ticker": "HAL"
+        "ticker": "HAL",
+        "sector": "energy",
+        "has_news": true
     },
     {
-        "name": "Hartford",
-        "ticker": "HIG"
+        "name": "Hartford (The)",
+        "ticker": "HIG",
+        "sector": "financial-services",
+        "has_news": true
     },
     {
         "name": "Hasbro",
-        "ticker": "HAS"
+        "ticker": "HAS",
+        "sector": "consumer-cyclical",
+        "has_news": true
     },
     {
         "name": "Healthpeak Properties",
-        "ticker": "DOC"
+        "ticker": "DOC",
+        "sector": "real-estate",
+        "has_news": true
     },
     {
         "name": "Henry Schein",
-        "ticker": "HSIC"
+        "ticker": "HSIC",
+        "sector": "healthcare",
+        "has_news": true
     },
     {
-        "name": "Hershey Company",
-        "ticker": "HSY"
+        "name": "Hershey Company (The)",
+        "ticker": "HSY",
+        "sector": "consumer-defensive",
+        "has_news": true
     },
     {
         "name": "Hewlett Packard Enterprise",
-        "ticker": "HPE"
+        "ticker": "HPE",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "Hilton Worldwide",
-        "ticker": "HLT"
+        "ticker": "HLT",
+        "sector": "consumer-cyclical",
+        "has_news": true
     },
     {
         "name": "Hologic",
-        "ticker": "HOLX"
+        "ticker": "HOLX",
+        "sector": "healthcare",
+        "has_news": true
     },
     {
-        "name": "Home Depot",
-        "ticker": "HD"
+        "name": "Home Depot (The)",
+        "ticker": "HD",
+        "sector": "consumer-cyclical",
+        "has_news": true
     },
     {
         "name": "Honeywell",
-        "ticker": "HON"
+        "ticker": "HON",
+        "sector": "industrials",
+        "has_news": true
     },
     {
         "name": "Hormel Foods",
-        "ticker": "HRL"
+        "ticker": "HRL",
+        "sector": "consumer-defensive",
+        "has_news": true
     },
     {
         "name": "Host Hotels & Resorts",
-        "ticker": "HST"
+        "ticker": "HST",
+        "sector": "real-estate",
+        "has_news": true
     },
     {
         "name": "Howmet Aerospace",
-        "ticker": "HWM"
+        "ticker": "HWM",
+        "sector": "industrials",
+        "has_news": true
     },
     {
         "name": "Hubbell Incorporated",
-        "ticker": "HUBB"
+        "ticker": "HUBB",
+        "sector": "industrials",
+        "has_news": true
     },
     {
         "name": "Humana",
-        "ticker": "HUM"
+        "ticker": "HUM",
+        "sector": "healthcare",
+        "has_news": true
     },
     {
         "name": "Huntington Bancshares",
-        "ticker": "HBAN"
+        "ticker": "HBAN",
+        "sector": "financial-services",
+        "has_news": true
     },
     {
         "name": "Huntington Ingalls Industries",
-        "ticker": "HII"
+        "ticker": "HII",
+        "sector": "industrials",
+        "has_news": true
     },
     {
         "name": "IBM",
-        "ticker": "IBM"
+        "ticker": "IBM",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "IDEX Corporation",
-        "ticker": "IEX"
+        "ticker": "IEX",
+        "sector": "industrials",
+        "has_news": true
     },
     {
         "name": "IQVIA",
-        "ticker": "IQV"
+        "ticker": "IQV",
+        "sector": "healthcare",
+        "has_news": true
     },
     {
         "name": "Idexx Laboratories",
-        "ticker": "IDXX"
+        "ticker": "IDXX",
+        "sector": "healthcare",
+        "has_news": true
     },
     {
         "name": "Illinois Tool Works",
-        "ticker": "ITW"
+        "ticker": "ITW",
+        "sector": "industrials",
+        "has_news": true
     },
     {
         "name": "Incyte",
-        "ticker": "INCY"
+        "ticker": "INCY",
+        "sector": "healthcare",
+        "has_news": true
     },
     {
         "name": "Ingersoll Rand",
-        "ticker": "IR"
+        "ticker": "IR",
+        "sector": "industrials",
+        "has_news": true
     },
     {
         "name": "Insulet Corporation",
-        "ticker": "PODD"
+        "ticker": "PODD",
+        "sector": "healthcare",
+        "has_news": true
     },
     {
         "name": "Intel",
-        "ticker": "INTC"
+        "ticker": "INTC",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "Intercontinental Exchange",
-        "ticker": "ICE"
+        "ticker": "ICE",
+        "sector": "financial-services",
+        "has_news": true
     },
     {
         "name": "International Flavors & Fragrances",
-        "ticker": "IFF"
+        "ticker": "IFF",
+        "sector": "basic-materials",
+        "has_news": true
     },
     {
         "name": "International Paper",
-        "ticker": "IP"
+        "ticker": "IP",
+        "sector": "consumer-cyclical",
+        "has_news": true
     },
     {
-        "name": "Interpublic Group of Companies",
-        "ticker": "IPG"
+        "name": "Interpublic Group of Companies (The)",
+        "ticker": "IPG",
+        "sector": "unclassified",
+        "has_news": true
     },
     {
         "name": "Intuit",
-        "ticker": "INTU"
+        "ticker": "INTU",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "Intuitive Surgical",
-        "ticker": "ISRG"
+        "ticker": "ISRG",
+        "sector": "healthcare",
+        "has_news": true
     },
     {
         "name": "Invesco",
-        "ticker": "IVZ"
+        "ticker": "IVZ",
+        "sector": "financial-services",
+        "has_news": true
     },
     {
         "name": "Invitation Homes",
-        "ticker": "INVH"
+        "ticker": "INVH",
+        "sector": "real-estate",
+        "has_news": true
     },
     {
         "name": "Iron Mountain",
-        "ticker": "IRM"
+        "ticker": "IRM",
+        "sector": "real-estate",
+        "has_news": true
     },
     {
         "name": "J.B. Hunt",
-        "ticker": "JBHT"
+        "ticker": "JBHT",
+        "sector": "industrials",
+        "has_news": true
     },
     {
-        "name": "J.M. Smucker Company",
-        "ticker": "SJM"
+        "name": "J.M. Smucker Company (The)",
+        "ticker": "SJM",
+        "sector": "unclassified",
+        "has_news": false
+    },
+    {
+        "name": "JD Sports",
+        "ticker": "JD.L",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "JPMorgan Chase",
-        "ticker": "JPM"
+        "ticker": "JPM",
+        "sector": "financial-services",
+        "has_news": true
     },
     {
         "name": "Jabil",
-        "ticker": "JBL"
+        "ticker": "JBL",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "Jack Henry & Associates",
-        "ticker": "JKHY"
+        "ticker": "JKHY",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "Jacobs Solutions",
-        "ticker": "J"
+        "ticker": "J",
+        "sector": "industrials",
+        "has_news": true
     },
     {
         "name": "Johnson & Johnson",
-        "ticker": "JNJ"
+        "ticker": "JNJ",
+        "sector": "healthcare",
+        "has_news": true
     },
     {
         "name": "Johnson Controls",
-        "ticker": "JCI"
+        "ticker": "JCI",
+        "sector": "industrials",
+        "has_news": true
     },
     {
         "name": "KKR & Co.",
-        "ticker": "KKR"
+        "ticker": "KKR",
+        "sector": "financial-services",
+        "has_news": true
     },
     {
         "name": "KLA Corporation",
-        "ticker": "KLAC"
+        "ticker": "KLAC",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "Kellanova",
-        "ticker": "K"
+        "ticker": "K",
+        "sector": "unclassified",
+        "has_news": true
     },
     {
         "name": "Kenvue",
-        "ticker": "KVUE"
+        "ticker": "KVUE",
+        "sector": "consumer-defensive",
+        "has_news": true
     },
     {
         "name": "Keurig Dr Pepper",
-        "ticker": "KDP"
+        "ticker": "KDP",
+        "sector": "consumer-defensive",
+        "has_news": true
     },
     {
         "name": "KeyCorp",
-        "ticker": "KEY"
+        "ticker": "KEY",
+        "sector": "financial-services",
+        "has_news": true
     },
     {
         "name": "Keysight Technologies",
-        "ticker": "KEYS"
+        "ticker": "KEYS",
+        "sector": "technology",
+        "has_news": true
     },
     {
         "name": "Kimberly-Clark",
-        "ticker": "KMB"
+        "ticker": "KMB",
+        "sector": "consumer-defensive",
+        "has_news": true
     },
     {
         "name": "Kimco Realty",
-        "ticker": "KIM"
+        "ticker": "KIM",
+        "sector": "real-estate",
+        "has_news": true
     },
     {
         "name": "Kinder Morgan",
-        "ticker": "KMI"
+        "ticker": "KMI",
+        "sector": "energy",
+        "has_news": true
     },
     {
         "name": "Kraft Heinz",
-        "ticker": "KHC"
+        "ticker": "KHC",
+        "sector": "consumer-defensive",
+        "has_news": true
     },
     {
         "name": "Kroger",
-        "ticker": "KR"
+        "ticker": "KR",
+        "sector": "consumer-defensive",
+        "has_news": true
     },
     {
         "name": "L3Harris",
-        "ticker": "LHX"
+        "ticker": "LHX",
+        "sector": "industrials",
+        "has_news": true
     },
     {
         "name": "LKQ Corporation",
-        "ticker": "LKQ"
+        "ticker": "LKQ",
+        "sector": "consumer-cyclical",
+        "has_news": false
     },
     {
         "name": "Labcorp",
-        "ticker": "LH"
+        "ticker": "LH",
+        "sector": "healthcare",
+        "has_news": true
     },
     {
         "name": "Lam Research",
-        "ticker": "LRCX"
+        "ticker": "LRCX",
+        "sector": "technology",
+        "has_news": false
     },
     {
         "name": "Lamb Weston",
-        "ticker": "LW"
+        "ticker": "LW",
+        "sector": "consumer-defensive",
+        "has_news": false
     },
     {
         "name": "Las Vegas Sands",
-        "ticker": "LVS"
+        "ticker": "LVS",
+        "sector": "consumer-cyclical",
+        "has_news": false
     },
     {
         "name": "Leidos",
-        "ticker": "LDOS"
+        "ticker": "LDOS",
+        "sector": "technology",
+        "has_news": false
     },
     {
         "name": "Lennar",
-        "ticker": "LEN"
+        "ticker": "LEN",
+        "sector": "consumer-cyclical",
+        "has_news": false
     },
     {
         "name": "Lennox International",
-        "ticker": "LII"
+        "ticker": "LII",
+        "sector": "industrials",
+        "has_news": false
     },
     {
-        "name": "Lilly",
-        "ticker": "LLY"
+        "name": "Lilly (Eli)",
+        "ticker": "LLY",
+        "sector": "healthcare",
+        "has_news": false
     },
     {
         "name": "Linde plc",
-        "ticker": "LIN"
+        "ticker": "LIN",
+        "sector": "basic-materials",
+        "has_news": false
     },
     {
         "name": "Live Nation Entertainment",
-        "ticker": "LYV"
+        "ticker": "LYV",
+        "sector": "communication-services",
+        "has_news": false
+    },
+    {
+        "name": "Lloyds Banking Group",
+        "ticker": "LLOY.L",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Lockheed Martin",
-        "ticker": "LMT"
+        "ticker": "LMT",
+        "sector": "industrials",
+        "has_news": false
     },
     {
         "name": "Loews Corporation",
-        "ticker": "L"
+        "ticker": "L",
+        "sector": "financial-services",
+        "has_news": false
     },
     {
         "name": "Lowe's",
-        "ticker": "LOW"
+        "ticker": "LOW",
+        "sector": "consumer-cyclical",
+        "has_news": false
     },
     {
         "name": "Lululemon Athletica",
-        "ticker": "LULU"
+        "ticker": "LULU",
+        "sector": "consumer-cyclical",
+        "has_news": false
     },
     {
         "name": "LyondellBasell",
-        "ticker": "LYB"
+        "ticker": "LYB",
+        "sector": "basic-materials",
+        "has_news": false
     },
     {
         "name": "M&T Bank",
-        "ticker": "MTB"
+        "ticker": "MTB",
+        "sector": "financial-services",
+        "has_news": false
     },
     {
         "name": "MGM Resorts",
-        "ticker": "MGM"
+        "ticker": "MGM",
+        "sector": "consumer-cyclical",
+        "has_news": false
     },
     {
         "name": "MSCI Inc.",
-        "ticker": "MSCI"
+        "ticker": "MSCI",
+        "sector": "financial-services",
+        "has_news": false
     },
     {
         "name": "Marathon Petroleum",
-        "ticker": "MPC"
+        "ticker": "MPC",
+        "sector": "energy",
+        "has_news": false
     },
     {
         "name": "MarketAxess",
-        "ticker": "MKTX"
+        "ticker": "MKTX",
+        "sector": "financial-services",
+        "has_news": false
+    },
+    {
+        "name": "Marks & Spencer",
+        "ticker": "MKS.L",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Marriott International",
-        "ticker": "MAR"
+        "ticker": "MAR",
+        "sector": "consumer-cyclical",
+        "has_news": false
     },
     {
         "name": "Marsh McLennan",
-        "ticker": "MMC"
+        "ticker": "MMC",
+        "sector": "financial-services",
+        "has_news": false
     },
     {
         "name": "Martin Marietta Materials",
-        "ticker": "MLM"
+        "ticker": "MLM",
+        "sector": "basic-materials",
+        "has_news": false
     },
     {
         "name": "Masco",
-        "ticker": "MAS"
+        "ticker": "MAS",
+        "sector": "industrials",
+        "has_news": false
     },
     {
         "name": "Mastercard",
-        "ticker": "MA"
+        "ticker": "MA",
+        "sector": "financial-services",
+        "has_news": false
     },
     {
         "name": "Match Group",
-        "ticker": "MTCH"
+        "ticker": "MTCH",
+        "sector": "communication-services",
+        "has_news": false
     },
     {
         "name": "McCormick & Company",
-        "ticker": "MKC"
+        "ticker": "MKC",
+        "sector": "consumer-defensive",
+        "has_news": false
     },
     {
         "name": "McDonald's",
-        "ticker": "MCD"
+        "ticker": "MCD",
+        "sector": "consumer-cyclical",
+        "has_news": false
     },
     {
         "name": "McKesson Corporation",
-        "ticker": "MCK"
+        "ticker": "MCK",
+        "sector": "healthcare",
+        "has_news": false
     },
     {
         "name": "Medtronic",
-        "ticker": "MDT"
+        "ticker": "MDT",
+        "sector": "healthcare",
+        "has_news": false
     },
     {
         "name": "Merck & Co.",
-        "ticker": "MRK"
+        "ticker": "MRK",
+        "sector": "healthcare",
+        "has_news": false
     },
     {
         "name": "MetLife",
-        "ticker": "MET"
+        "ticker": "MET",
+        "sector": "financial-services",
+        "has_news": false
     },
     {
         "name": "Meta Platforms",
-        "ticker": "META"
+        "ticker": "META",
+        "sector": "communication-services",
+        "has_news": false
     },
     {
         "name": "Mettler Toledo",
-        "ticker": "MTD"
+        "ticker": "MTD",
+        "sector": "healthcare",
+        "has_news": false
     },
     {
         "name": "Microchip Technology",
-        "ticker": "MCHP"
+        "ticker": "MCHP",
+        "sector": "technology",
+        "has_news": false
     },
     {
         "name": "Micron Technology",
-        "ticker": "MU"
+        "ticker": "MU",
+        "sector": "technology",
+        "has_news": false
     },
     {
         "name": "Microsoft",
-        "ticker": "MSFT"
+        "ticker": "MSFT",
+        "sector": "technology",
+        "has_news": false
     },
     {
         "name": "Mid-America Apartment Communities",
-        "ticker": "MAA"
+        "ticker": "MAA",
+        "sector": "real-estate",
+        "has_news": false
     },
     {
         "name": "Moderna",
-        "ticker": "MRNA"
+        "ticker": "MRNA",
+        "sector": "healthcare",
+        "has_news": false
     },
     {
         "name": "Mohawk Industries",
-        "ticker": "MHK"
+        "ticker": "MHK",
+        "sector": "consumer-cyclical",
+        "has_news": false
     },
     {
         "name": "Molina Healthcare",
-        "ticker": "MOH"
+        "ticker": "MOH",
+        "sector": "healthcare",
+        "has_news": false
     },
     {
         "name": "Molson Coors Beverage Company",
-        "ticker": "TAP"
+        "ticker": "TAP",
+        "sector": "consumer-defensive",
+        "has_news": false
     },
     {
         "name": "Mondelez International",
-        "ticker": "MDLZ"
+        "ticker": "MDLZ",
+        "sector": "consumer-defensive",
+        "has_news": false
     },
     {
         "name": "Monolithic Power Systems",
-        "ticker": "MPWR"
+        "ticker": "MPWR",
+        "sector": "technology",
+        "has_news": false
     },
     {
         "name": "Monster Beverage",
-        "ticker": "MNST"
+        "ticker": "MNST",
+        "sector": "consumer-defensive",
+        "has_news": false
     },
     {
         "name": "Moody's Corporation",
-        "ticker": "MCO"
+        "ticker": "MCO",
+        "sector": "financial-services",
+        "has_news": false
     },
     {
         "name": "Morgan Stanley",
-        "ticker": "MS"
+        "ticker": "MS",
+        "sector": "financial-services",
+        "has_news": false
     },
     {
-        "name": "Mosaic Company ",
-        "ticker": "MOS"
+        "name": "Mosaic Company (The)",
+        "ticker": "MOS",
+        "sector": "basic-materials",
+        "has_news": false
     },
     {
         "name": "Motorola Solutions",
-        "ticker": "MSI"
+        "ticker": "MSI",
+        "sector": "technology",
+        "has_news": false
     },
     {
         "name": "NRG Energy",
-        "ticker": "NRG"
+        "ticker": "NRG",
+        "sector": "utilities",
+        "has_news": false
     },
     {
         "name": "NVR, Inc.",
-        "ticker": "NVR"
+        "ticker": "NVR",
+        "sector": "consumer-cyclical",
+        "has_news": false
     },
     {
         "name": "NXP Semiconductors",
-        "ticker": "NXPI"
+        "ticker": "NXPI",
+        "sector": "technology",
+        "has_news": false
     },
     {
         "name": "Nasdaq, Inc.",
-        "ticker": "NDAQ"
+        "ticker": "NDAQ",
+        "sector": "financial-services",
+        "has_news": false
+    },
+    {
+        "name": "NatWest",
+        "ticker": "NWG.L",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "NetApp",
-        "ticker": "NTAP"
+        "ticker": "NTAP",
+        "sector": "technology",
+        "has_news": false
     },
     {
         "name": "Netflix",
-        "ticker": "NFLX"
+        "ticker": "NFLX",
+        "sector": "communication-services",
+        "has_news": false
     },
     {
         "name": "Newmont",
-        "ticker": "NEM"
+        "ticker": "NEM",
+        "sector": "basic-materials",
+        "has_news": false
     },
     {
         "name": "News Corp (Class A)",
-        "ticker": "NWSA"
+        "ticker": "NWSA",
+        "sector": "communication-services",
+        "has_news": false
     },
     {
         "name": "News Corp (Class B)",
-        "ticker": "NWS"
+        "ticker": "NWS",
+        "sector": "communication-services",
+        "has_news": false
+    },
+    {
+        "name": "Next",
+        "ticker": "NXT.L",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "NextEra Energy",
-        "ticker": "NEE"
+        "ticker": "NEE",
+        "sector": "utilities",
+        "has_news": false
     },
     {
         "name": "NiSource",
-        "ticker": "NI"
+        "ticker": "NI",
+        "sector": "utilities",
+        "has_news": false
     },
     {
         "name": "Nike, Inc.",
-        "ticker": "NKE"
+        "ticker": "NKE",
+        "sector": "consumer-cyclical",
+        "has_news": false
     },
     {
         "name": "Nordson Corporation",
-        "ticker": "NDSN"
+        "ticker": "NDSN",
+        "sector": "industrials",
+        "has_news": false
     },
     {
         "name": "Norfolk Southern",
-        "ticker": "NSC"
+        "ticker": "NSC",
+        "sector": "industrials",
+        "has_news": false
     },
     {
         "name": "Northern Trust",
-        "ticker": "NTRS"
+        "ticker": "NTRS",
+        "sector": "financial-services",
+        "has_news": false
     },
     {
         "name": "Northrop Grumman",
-        "ticker": "NOC"
+        "ticker": "NOC",
+        "sector": "industrials",
+        "has_news": false
     },
     {
         "name": "Norwegian Cruise Line Holdings",
-        "ticker": "NCLH"
+        "ticker": "NCLH",
+        "sector": "consumer-cyclical",
+        "has_news": false
     },
     {
         "name": "Nucor",
-        "ticker": "NUE"
+        "ticker": "NUE",
+        "sector": "basic-materials",
+        "has_news": false
     },
     {
         "name": "Nvidia",
-        "ticker": "NVDA"
+        "ticker": "NVDA",
+        "sector": "technology",
+        "has_news": false
     },
     {
         "name": "ON Semiconductor",
-        "ticker": "ON"
+        "ticker": "ON",
+        "sector": "technology",
+        "has_news": false
     },
     {
         "name": "Occidental Petroleum",
-        "ticker": "OXY"
+        "ticker": "OXY",
+        "sector": "energy",
+        "has_news": false
     },
     {
         "name": "Old Dominion",
-        "ticker": "ODFL"
+        "ticker": "ODFL",
+        "sector": "industrials",
+        "has_news": false
     },
     {
         "name": "Omnicom Group",
-        "ticker": "OMC"
+        "ticker": "OMC",
+        "sector": "communication-services",
+        "has_news": false
     },
     {
         "name": "Oneok",
-        "ticker": "OKE"
+        "ticker": "OKE",
+        "sector": "energy",
+        "has_news": false
     },
     {
         "name": "Oracle Corporation",
-        "ticker": "ORCL"
+        "ticker": "ORCL",
+        "sector": "technology",
+        "has_news": false
     },
     {
         "name": "Otis Worldwide",
-        "ticker": "OTIS"
+        "ticker": "OTIS",
+        "sector": "industrials",
+        "has_news": false
     },
     {
-        "name": "OReilly Automotive",
-        "ticker": "ORLY"
+        "name": "O\u2019Reilly Automotive",
+        "ticker": "ORLY",
+        "sector": "consumer-cyclical",
+        "has_news": false
     },
     {
         "name": "PG&E Corporation",
-        "ticker": "PCG"
+        "ticker": "PCG",
+        "sector": "utilities",
+        "has_news": false
     },
     {
         "name": "PNC Financial Services",
-        "ticker": "PNC"
+        "ticker": "PNC",
+        "sector": "financial-services",
+        "has_news": false
     },
     {
         "name": "PPG Industries",
-        "ticker": "PPG"
+        "ticker": "PPG",
+        "sector": "basic-materials",
+        "has_news": false
     },
     {
         "name": "PPL Corporation",
-        "ticker": "PPL"
+        "ticker": "PPL",
+        "sector": "utilities",
+        "has_news": false
     },
     {
         "name": "PTC Inc.",
-        "ticker": "PTC"
+        "ticker": "PTC",
+        "sector": "technology",
+        "has_news": false
     },
     {
         "name": "Paccar",
-        "ticker": "PCAR"
+        "ticker": "PCAR",
+        "sector": "industrials",
+        "has_news": false
     },
     {
         "name": "Packaging Corporation of America",
-        "ticker": "PKG"
+        "ticker": "PKG",
+        "sector": "consumer-cyclical",
+        "has_news": false
     },
     {
         "name": "Palantir Technologies",
-        "ticker": "PLTR"
+        "ticker": "PLTR",
+        "sector": "technology",
+        "has_news": false
     },
     {
         "name": "Palo Alto Networks",
-        "ticker": "PANW"
+        "ticker": "PANW",
+        "sector": "technology",
+        "has_news": false
     },
     {
         "name": "Paramount Skydance Corporation",
-        "ticker": "PSKY"
+        "ticker": "PSKY",
+        "sector": "communication-services",
+        "has_news": false
     },
     {
         "name": "Parker Hannifin",
-        "ticker": "PH"
+        "ticker": "PH",
+        "sector": "industrials",
+        "has_news": false
     },
     {
         "name": "PayPal",
-        "ticker": "PYPL"
+        "ticker": "PYPL",
+        "sector": "financial-services",
+        "has_news": false
     },
     {
         "name": "Paychex",
-        "ticker": "PAYX"
+        "ticker": "PAYX",
+        "sector": "technology",
+        "has_news": false
     },
     {
         "name": "Paycom",
-        "ticker": "PAYC"
+        "ticker": "PAYC",
+        "sector": "technology",
+        "has_news": false
     },
     {
         "name": "Pentair",
-        "ticker": "PNR"
+        "ticker": "PNR",
+        "sector": "industrials",
+        "has_news": false
     },
     {
         "name": "PepsiCo",
-        "ticker": "PEP"
+        "ticker": "PEP",
+        "sector": "consumer-defensive",
+        "has_news": false
     },
     {
         "name": "Pfizer",
-        "ticker": "PFE"
+        "ticker": "PFE",
+        "sector": "healthcare",
+        "has_news": false
     },
     {
         "name": "Philip Morris International",
-        "ticker": "PM"
+        "ticker": "PM",
+        "sector": "consumer-defensive",
+        "has_news": false
     },
     {
         "name": "Phillips 66",
-        "ticker": "PSX"
+        "ticker": "PSX",
+        "sector": "energy",
+        "has_news": false
     },
     {
         "name": "Pinnacle West Capital",
-        "ticker": "PNW"
+        "ticker": "PNW",
+        "sector": "utilities",
+        "has_news": false
     },
     {
         "name": "Pool Corporation",
-        "ticker": "POOL"
+        "ticker": "POOL",
+        "sector": "industrials",
+        "has_news": false
     },
     {
         "name": "Principal Financial Group",
-        "ticker": "PFG"
+        "ticker": "PFG",
+        "sector": "financial-services",
+        "has_news": false
     },
     {
         "name": "Procter & Gamble",
-        "ticker": "PG"
+        "ticker": "PG",
+        "sector": "consumer-defensive",
+        "has_news": false
     },
     {
         "name": "Progressive Corporation",
-        "ticker": "PGR"
+        "ticker": "PGR",
+        "sector": "financial-services",
+        "has_news": false
     },
     {
         "name": "Prologis",
-        "ticker": "PLD"
+        "ticker": "PLD",
+        "sector": "real-estate",
+        "has_news": false
     },
     {
         "name": "Prudential Financial",
-        "ticker": "PRU"
+        "ticker": "PRU",
+        "sector": "financial-services",
+        "has_news": false
     },
     {
         "name": "Public Service Enterprise Group",
-        "ticker": "PEG"
+        "ticker": "PEG",
+        "sector": "utilities",
+        "has_news": false
     },
     {
         "name": "Public Storage",
-        "ticker": "PSA"
+        "ticker": "PSA",
+        "sector": "real-estate",
+        "has_news": false
     },
     {
         "name": "PulteGroup",
-        "ticker": "PHM"
+        "ticker": "PHM",
+        "sector": "consumer-cyclical",
+        "has_news": false
     },
     {
         "name": "Qualcomm",
-        "ticker": "QCOM"
+        "ticker": "QCOM",
+        "sector": "technology",
+        "has_news": false
     },
     {
         "name": "Quanta Services",
-        "ticker": "PWR"
+        "ticker": "PWR",
+        "sector": "industrials",
+        "has_news": false
     },
     {
         "name": "Quest Diagnostics",
-        "ticker": "DGX"
+        "ticker": "DGX",
+        "sector": "healthcare",
+        "has_news": false
     },
     {
         "name": "RTX Corporation",
-        "ticker": "RTX"
+        "ticker": "RTX",
+        "sector": "industrials",
+        "has_news": false
     },
     {
         "name": "Ralph Lauren Corporation",
-        "ticker": "RL"
+        "ticker": "RL",
+        "sector": "consumer-cyclical",
+        "has_news": false
     },
     {
         "name": "Raymond James Financial",
-        "ticker": "RJF"
+        "ticker": "RJF",
+        "sector": "financial-services",
+        "has_news": false
     },
     {
         "name": "Realty Income",
-        "ticker": "O"
+        "ticker": "O",
+        "sector": "real-estate",
+        "has_news": false
     },
     {
         "name": "Regency Centers",
-        "ticker": "REG"
+        "ticker": "REG",
+        "sector": "real-estate",
+        "has_news": false
     },
     {
         "name": "Regeneron Pharmaceuticals",
-        "ticker": "REGN"
+        "ticker": "REGN",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Regions Financial Corporation",
-        "ticker": "RF"
+        "ticker": "RF",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Republic Services",
-        "ticker": "RSG"
+        "ticker": "RSG",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "ResMed",
-        "ticker": "RMD"
+        "ticker": "RMD",
+        "sector": "healthcare",
+        "has_news": false
     },
     {
         "name": "Revvity",
-        "ticker": "RVTY"
-    },
-    {
-        "name": "Rio Tinto",
-        "ticker": "RIO.L"
+        "ticker": "RVTY",
+        "sector": "healthcare",
+        "has_news": false
     },
     {
         "name": "Rockwell Automation",
-        "ticker": "ROK"
+        "ticker": "ROK",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Rollins, Inc.",
-        "ticker": "ROL"
+        "ticker": "ROL",
+        "sector": "unclassified",
+        "has_news": false
+    },
+    {
+        "name": "Rolls-Royce",
+        "ticker": "RR.L",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Roper Technologies",
-        "ticker": "ROP"
+        "ticker": "ROP",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Ross Stores",
-        "ticker": "ROST"
+        "ticker": "ROST",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Royal Caribbean Group",
-        "ticker": "RCL"
+        "ticker": "RCL",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "S&P Global",
-        "ticker": "SPGI"
+        "ticker": "SPGI",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "SBA Communications",
-        "ticker": "SBAC"
+        "ticker": "SBAC",
+        "sector": "unclassified",
+        "has_news": false
+    },
+    {
+        "name": "Sainsbury's",
+        "ticker": "SBRY.L",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Salesforce",
-        "ticker": "CRM"
+        "ticker": "CRM",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Schlumberger",
-        "ticker": "SLB"
+        "ticker": "SLB",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Seagate Technology",
-        "ticker": "STX"
+        "ticker": "STX",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Sempra",
-        "ticker": "SRE"
+        "ticker": "SRE",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "ServiceNow",
-        "ticker": "NOW"
+        "ticker": "NOW",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
-        "name": "Shell plc",
-        "ticker": "SHEL.L"
+        "name": "Shell",
+        "ticker": "SHEL.L",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Sherwin-Williams",
-        "ticker": "SHW"
+        "ticker": "SHW",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Simon Property Group",
-        "ticker": "SPG"
+        "ticker": "SPG",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Skyworks Solutions",
-        "ticker": "SWKS"
+        "ticker": "SWKS",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Smurfit Westrock",
-        "ticker": "SW"
+        "ticker": "SW",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Snap-on",
-        "ticker": "SNA"
+        "ticker": "SNA",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Solventum",
-        "ticker": "SOLV"
+        "ticker": "SOLV",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Southern Company",
-        "ticker": "SO"
+        "ticker": "SO",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Southwest Airlines",
-        "ticker": "LUV"
+        "ticker": "LUV",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Stanley Black & Decker",
-        "ticker": "SWK"
+        "ticker": "SWK",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Starbucks",
-        "ticker": "SBUX"
+        "ticker": "SBUX",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "State Street Corporation",
-        "ticker": "STT"
+        "ticker": "STT",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Steel Dynamics",
-        "ticker": "STLD"
+        "ticker": "STLD",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Steris",
-        "ticker": "STE"
+        "ticker": "STE",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Stryker Corporation",
-        "ticker": "SYK"
+        "ticker": "SYK",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Supermicro",
-        "ticker": "SMCI"
+        "ticker": "SMCI",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Synchrony Financial",
-        "ticker": "SYF"
+        "ticker": "SYF",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Synopsys",
-        "ticker": "SNPS"
+        "ticker": "SNPS",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Sysco",
-        "ticker": "SYY"
+        "ticker": "SYY",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "T-Mobile US",
-        "ticker": "TMUS"
+        "ticker": "TMUS",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "T. Rowe Price",
-        "ticker": "TROW"
+        "ticker": "TROW",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "TE Connectivity",
-        "ticker": "TEL"
+        "ticker": "TEL",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "TJX Companies",
-        "ticker": "TJX"
+        "ticker": "TJX",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "TKO Group Holdings",
-        "ticker": "TKO"
+        "ticker": "TKO",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Take-Two Interactive",
-        "ticker": "TTWO"
+        "ticker": "TTWO",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Tapestry, Inc.",
-        "ticker": "TPR"
+        "ticker": "TPR",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Targa Resources",
-        "ticker": "TRGP"
+        "ticker": "TRGP",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Target Corporation",
-        "ticker": "TGT"
+        "ticker": "TGT",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Teledyne Technologies",
-        "ticker": "TDY"
+        "ticker": "TDY",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Teradyne",
-        "ticker": "TER"
+        "ticker": "TER",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Tesco",
-        "ticker": "TSCO.L"
+        "ticker": "TSCO.L",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Tesla, Inc.",
-        "ticker": "TSLA"
+        "ticker": "TSLA",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Texas Instruments",
-        "ticker": "TXN"
+        "ticker": "TXN",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Texas Pacific Land Corporation",
-        "ticker": "TPL"
+        "ticker": "TPL",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Textron",
-        "ticker": "TXT"
+        "ticker": "TXT",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Thermo Fisher Scientific",
-        "ticker": "TMO"
+        "ticker": "TMO",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Tractor Supply",
-        "ticker": "TSCO"
+        "ticker": "TSCO",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
-        "name": "Trade Desk",
-        "ticker": "TTD"
+        "name": "Trade Desk (The)",
+        "ticker": "TTD",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Trane Technologies",
-        "ticker": "TT"
+        "ticker": "TT",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "TransDigm Group",
-        "ticker": "TDG"
+        "ticker": "TDG",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
-        "name": "Travelers Companies",
-        "ticker": "TRV"
+        "name": "Travelers Companies (The)",
+        "ticker": "TRV",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Trimble Inc.",
-        "ticker": "TRMB"
+        "ticker": "TRMB",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Truist Financial",
-        "ticker": "TFC"
+        "ticker": "TFC",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Tyler Technologies",
-        "ticker": "TYL"
+        "ticker": "TYL",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Tyson Foods",
-        "ticker": "TSN"
+        "ticker": "TSN",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "U.S. Bancorp",
-        "ticker": "USB"
+        "ticker": "USB",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "UDR, Inc.",
-        "ticker": "UDR"
+        "ticker": "UDR",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Uber",
-        "ticker": "UBER"
+        "ticker": "UBER",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Ulta Beauty",
-        "ticker": "ULTA"
+        "ticker": "ULTA",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Unilever",
-        "ticker": "ULVR.L"
+        "ticker": "ULVR.L",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Union Pacific Corporation",
-        "ticker": "UNP"
+        "ticker": "UNP",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "United Airlines Holdings",
-        "ticker": "UAL"
+        "ticker": "UAL",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "United Parcel Service",
-        "ticker": "UPS"
+        "ticker": "UPS",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "United Rentals",
-        "ticker": "URI"
+        "ticker": "URI",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "UnitedHealth Group",
-        "ticker": "UNH"
+        "ticker": "UNH",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Universal Health Services",
-        "ticker": "UHS"
+        "ticker": "UHS",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Valero Energy",
-        "ticker": "VLO"
+        "ticker": "VLO",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Ventas",
-        "ticker": "VTR"
+        "ticker": "VTR",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Veralto",
-        "ticker": "VLTO"
+        "ticker": "VLTO",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Verisign",
-        "ticker": "VRSN"
+        "ticker": "VRSN",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Verisk Analytics",
-        "ticker": "VRSK"
+        "ticker": "VRSK",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Verizon",
-        "ticker": "VZ"
+        "ticker": "VZ",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Vertex Pharmaceuticals",
-        "ticker": "VRTX"
+        "ticker": "VRTX",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Viatris",
-        "ticker": "VTRS"
+        "ticker": "VTRS",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Vici Properties",
-        "ticker": "VICI"
+        "ticker": "VICI",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Visa Inc.",
-        "ticker": "V"
+        "ticker": "V",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Vistra Corp.",
-        "ticker": "VST"
+        "ticker": "VST",
+        "sector": "unclassified",
+        "has_news": false
+    },
+    {
+        "name": "Vodafone",
+        "ticker": "VOD.L",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Vulcan Materials Company",
-        "ticker": "VMC"
+        "ticker": "VMC",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "W. R. Berkley Corporation",
-        "ticker": "WRB"
+        "ticker": "WRB",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "W. W. Grainger",
-        "ticker": "GWW"
+        "ticker": "GWW",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "WEC Energy Group",
-        "ticker": "WEC"
+        "ticker": "WEC",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Wabtec",
-        "ticker": "WAB"
+        "ticker": "WAB",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Walgreens Boots Alliance",
-        "ticker": "WBA"
+        "ticker": "WBA",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Walmart",
-        "ticker": "WMT"
+        "ticker": "WMT",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
-        "name": "Walt Disney Company",
-        "ticker": "DIS"
+        "name": "Walt Disney Company (The)",
+        "ticker": "DIS",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Warner Bros. Discovery",
-        "ticker": "WBD"
+        "ticker": "WBD",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Waste Management",
-        "ticker": "WM"
+        "ticker": "WM",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Waters Corporation",
-        "ticker": "WAT"
+        "ticker": "WAT",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Wells Fargo",
-        "ticker": "WFC"
+        "ticker": "WFC",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Welltower",
-        "ticker": "WELL"
+        "ticker": "WELL",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "West Pharmaceutical Services",
-        "ticker": "WST"
+        "ticker": "WST",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Western Digital",
-        "ticker": "WDC"
+        "ticker": "WDC",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Weyerhaeuser",
-        "ticker": "WY"
+        "ticker": "WY",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Williams Companies",
-        "ticker": "WMB"
+        "ticker": "WMB",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Williams-Sonoma, Inc.",
-        "ticker": "WSM"
+        "ticker": "WSM",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Willis Towers Watson",
-        "ticker": "WTW"
+        "ticker": "WTW",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Workday, Inc.",
-        "ticker": "WDAY"
+        "ticker": "WDAY",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Wynn Resorts",
-        "ticker": "WYNN"
+        "ticker": "WYNN",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Xcel Energy",
-        "ticker": "XEL"
+        "ticker": "XEL",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Xylem Inc.",
-        "ticker": "XYL"
+        "ticker": "XYL",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Yum! Brands",
-        "ticker": "YUM"
+        "ticker": "YUM",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Zebra Technologies",
-        "ticker": "ZBRA"
+        "ticker": "ZBRA",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Zimmer Biomet",
-        "ticker": "ZBH"
+        "ticker": "ZBH",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "Zoetis",
-        "ticker": "ZTS"
+        "ticker": "ZTS",
+        "sector": "unclassified",
+        "has_news": false
     },
     {
         "name": "eBay Inc.",
-        "ticker": "EBAY"
+        "ticker": "EBAY",
+        "sector": "consumer-cyclical",
+        "has_news": true
+    },
+    {
+        "name": "easyJet",
+        "ticker": "EZJ.L",
+        "sector": "unclassified",
+        "has_news": false
     }
 ]
