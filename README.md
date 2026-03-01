@@ -4,6 +4,8 @@
 ## Problem
 People often spend money on products without fully considering the long-term financial implications. The core issue is a **lack of awareness about opportunity cost**: every dollar spent on a depreciating item is a dollar not invested in an appreciating asset. This challenge is particularly pronounced among younger consumers or those with limited exposure to long-term financial thinking.
 
+Evidence supports how widespread this gap in financial understanding is. A 2020 study by Vanguard found that more than half of Americans could not correctly estimate the average annual return of the stock market over the previous 20 years. Most respondents significantly underestimated it—placing it around 5% rather than the historical ~10% associated with the S&P 500. When people fundamentally misunderstand long-term returns, they are less likely to recognize the implicit cost of spending instead of investing. This gap in knowledge directly contributes to suboptimal financial decisions and makes opportunity-cost awareness tools increasingly necessary.
+
 ---
 
 ## Solution
@@ -33,8 +35,4 @@ The interface prioritizes clarity, avoiding overwhelming financial jargon while 
 - **Forecasting Uncertainty:** Stock performance predictions are inherently probabilistic and must be framed carefully.  
 - **User Interpretation:** Some users may focus only on monetary outcomes and ignore qualitative benefits of products.  
 - **Technical Integration:** Combining multiple forecasting strategies (CAGR, geometric Brownian motion, AI sentiment) requires robust architecture.
-
-
-
-
 
